@@ -1,0 +1,302 @@
+<html lang="en" xmlns:esi="http://www.edge-delivery.org/esi/1.0" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Robots" content="index,follow" />
+<meta name="DC.Coverage" content="UK" />
+<meta name="DC.Creator" content="ONS" />
+<meta name="DC.Language" content="eng" scheme="ISO 639-2/T" />
+<meta name="eGMS.Accessibility" content=".No Conformance" scheme="eGMS.WCAG10" />
+<meta name="DC.Title" content="ONS SIC specific section/division/group/class/subclass" />
+<meta name="DCTERMS.alternative" content="" />
+<meta name="DC.subject" content="" />
+<meta name="DC.Description" content="ONS SIC specific section/division/group/class/subclass" />
+<meta name="DC.Source" content="Office for National Statistics" />
+<meta name="DC.Identifier" content="" scheme="eGMS.ISSN" />
+<meta name="eGMS.updatingFrequency" content="" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+<title>Details about one specific ONS SIC code</title>
+
+<script type="text/javascript" src="sicDB.js"></script>
+
+<script type="text/javascript">
+	// assuming this page was called with a code to display, identify said code
+	myclass = ""; previous = "";
+	GETvars = window.location.search.replace("?","").split("&");
+	for (i=0;i<GETvars.length;i++) {
+		xVAR = GETvars[i].split("=");
+		if(xVAR[1]) {
+			switch (xVAR[0].toLowerCase()) {
+				case "sic": myclass = xVAR[1]; break;
+				case "from": previous = xVAR[1]; break;
+			};
+		};
+	};
+	// define the type of code parsed
+
+	if(myclass.length > 6) { myclass = myclass.substr(0,6); };
+	if(myclass.length < 6) {
+		do { myclass = myclass + "x"; } while (myclass.length < 6);
+	};
+
+	if(SICmeta[myclass]) {
+		SICtype = "Sub-class";
+		if(myclass.substr(1,5) == "xxxxx") { SICtype = "Section"; };
+		if(myclass.substr(3,3) == "xxx" && myclass.substr(1,2) != "xx") { SICtype = "Division"; };
+		if(myclass.substr(4,2) == "xx" && myclass.substr(3,1) != "x") { SICtype = "Group"; };
+		if(myclass.substr(5,1) == "x" && myclass.substr(4,1) != "x") { SICtype = "Class"; };
+	};
+
+	function replace_refs(myval) {
+/*
+		finished = 0;
+		do {
+			finished = 0;
+			n1 = myval.toLowerCase().indexOf("section ");
+			if (n1 == -1) { finished++; };
+			if (n1 != -1) {
+				if (myval.substr(n1+8,1) == "A") {
+					newval = myval.substr(0,n1+8) + "<A HREF=\"SICmetadata.html?sic="+myval.substr(n1+8,1)+"xxxxx&from="+myclass+"\">"+SICdisplay(myval.substr(n1+8,1)+"xxxxx")+"</A>" + myval.substr(n1+9,myval.length-n1-8);
+				};
+			};
+			n1 = myval.toLowerCase().indexOf("division ");
+			if (n1 == -1) { finished++; };
+			if (n1 != -1) {
+	//		if (myval.substr(n1+8,1) == "A") {
+				newcode = "";
+				for (j=0;j<allsectors.length;j++) {
+					if (SICmeta[allsectors[j] + myval.substr(n1+9,2) + "xxx"]) { newcode = allsectors[j] + myval.substr(n1+9,2) + "xxx"; };
+				};
+				if (newcode != "") {
+					newval = myval.substr(0,n1+9) + "<A HREF=\"SICmetadata.html?sic="+newcode+"&from="+myclass+"\">"+SICdisplay(newcode)+"</A>" + myval.substr(n1+11,myval.length-n1-11);
+					alert(newval);
+				};
+	//		};
+			};
+			n1 = myval.toLowerCase().indexOf("group ");
+			if (n1 == -1) { finished++; };
+			n1 = myval.toLowerCase().indexOf("class ");
+			if (n1 == -1) { finished++; };
+		} while (finished != 4);
+*/
+		myval = myval.replace("<ul>","<UL>");
+		myval = myval.replace("<Ul>","<UL>");
+		myval = myval.replace("<uL>","<UL>");
+		myval = myval.replace("<UL>","<UL STYLE=\"list-style-position: outside; margin-top: 0px; margin-bottom: 0px;\">");
+		return myval;
+	};
+
+	function SICdisplay(myval) {
+		if(myval.substr(1,5) == "xxxxx") { return (myval.substr(0,1)); };
+		if(myval.substr(3,3) == "xxx" && myval.substr(1,2) != "xx") { return (myval.substr(1,2)); };
+		if(myval.substr(4,2) == "xx" && myval.substr(3,1) != "x") { return (myval.substr(1,2) + "." + myval.substr(3,1)); };
+		if(myval.substr(5,1) == "x" && myval.substr(4,1) != "x") { return (myval.substr(1,2) + "." + myval.substr(3,2)); };
+		return (myval.substr(1,2) + "." + myval.substr(3,2) + "/" + myval.substr(5,1));
+	};
+</script>
+
+<style type="text/css"><!--
+html, body {
+	height: 100%;
+	background-color: #EFEFEF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+}
+#wrap { min-height: 100%; }
+#main { height: 100%; }
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+a { color:#005582; text-decoration:none; }
+a:hover { color:#000000; text-decoration:underline; }
+a:visited { color:#551A8B; text-decoration:none; }
+
+#maincontent {
+	margin: 0px; margin-bottom: 5px;
+}
+#wrapper{/* enforces left and right page border */
+ background-color: #EFEFEF;
+ padding: 0px 18px 0px 6px;
+}
+
+#ons-style-border{ padding: 3px 9px 3px 10px; }
+#ons-style-box{
+	border: 1px solid #D9E1E5;
+	float: left;
+	background-color: #ffffff;
+	color: #383838;
+	width: 100%;
+	padding: 6px 6px 6px 8px;
+	margin-bottom: 3px;
+	}
+--></style>
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+<!--[if lt IE 9 ]>
+	<style type="text/css">
+	#wrapper{/* enforces left and right page border */
+	background-color: #EFEFEF;
+	padding: 0% 1.5% 0% 1%;
+	}
+	#ons-style-border{ padding: 0% 0% 0% 1%; }
+	#ons-style-box{
+	border: 1px solid #D9E1E5;
+	float: left;
+	background-color: #ffffff;
+	color: #383838;
+	width: 95%;
+	padding: 0.5% 1% 0.5% 1%;
+	margin-bottom: 3px;
+	}
+	</style>
+<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<div id="main">
+<!-- start of main page content -->
+				<div id="maincontent">
+<div id="wrapper">
+<!-- the start of the JavaScript to handle displaying the actual information -->
+	<script>
+// if there is actually information associated with the parsed code...
+//   display it, otherwise highlight there is a problem
+	document.write("<div id=\"ons-style-border\" style=\"padding-top: 9px;\"> <div id=\"ons-style-box\">");
+	if (!SICmeta[myclass]) {
+		document.write("	<FONT STYLE=\"font-size:100%;\">There has been a problem with your request: the SIC you tried to display does not exist.<BR>Please return to the previous page and try again.</FONT>");
+	} else {
+		document.write("	<FONT STYLE=\"font-size:112.5%;\"><B><FONT COLOR=\"#0000FF\">"+SICtype+" "+SICdisplay(myclass)+":</FONT></B> "+SICmeta[myclass].title+"</FONT>");
+	};
+	document.write("</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+
+	// assuming there is a description for this code, display it
+	if (SICmeta[myclass].detail) {
+		document.write("<!-- start the second white box of information -->");
+		document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+		document.write(replace_refs(SICmeta[myclass].detail));
+		document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+
+	// assuming there are .... related to this code, display them
+	if (SICmeta[myclass].includes) {
+		document.write("<!-- start the second white box of information -->");
+		document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+		document.write("<B>This "+SICtype.toLowerCase()+" includes:</B><UL STYLE=\"list-style-position: outside; margin-top: 0px; margin-bottom: 0px; display: inline;\">");
+		for (i=0;i<SICmeta[myclass].includes.length;i++) {
+			if (SICmeta[myclass].includes[i] != "") { document.write("<BR><LI STYLE=\"margin-left: 20px;\">"+replace_refs(SICmeta[myclass].includes[i])); };
+		};
+		document.write("</UL>\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+
+	// assuming there are .... related to this code, display them
+	if (SICmeta[myclass].excludes) {
+		document.write("<!-- start the second white box of information -->");
+		document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+		document.write("<B>This "+SICtype.toLowerCase()+" excludes:</B><UL STYLE=\"list-style-position: outside; margin-top: 0px; margin-bottom: 0px; display: inline;\">");
+		for (i=0;i<SICmeta[myclass].excludes.length;i++) {
+			if (SICmeta[myclass].excludes[i] != "") { document.write("<BR><LI STYLE=\"margin-left: 20px;\">"+replace_refs(SICmeta[myclass].excludes[i])); };
+		};
+		document.write("</UL>\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+
+	// if this was lower down the hierarchy than a section, display its hierarchy
+	if (SICmeta[myclass] && SICtype != "Section") {
+		document.write("<!-- start the fifth white box of information -->");
+		document.write("<div id=\"ons-style-border\" style=\"padding-bottom: 9px;\"> <div id=\"ons-style-box\">");
+		document.write("<B>This "+SICtype.toLowerCase()+" is part of:</B><UL STYLE=\"list-style-position: outside; display: inline;\">");
+		upsec = myclass.substr(0,1) + "xxxxx";
+		updiv = myclass.substr(0,3) + "xxx";
+		upgrp = myclass.substr(0,4) + "xx";
+		upcls = myclass.substr(0,5) + "x";
+		if (SICtype == "Sub-class") {
+			document.write("<LI STYLE=\"margin-left: 20px;\">Class <A HREF=\"SICmetadata.html?sic="+upcls+"&from="+myclass+"\">"+SICdisplay(upcls)+": "+SICmeta[upcls].title+"</A>");
+		};
+		if (SICtype == "Class" || SICtype == "Sub-class") {
+			document.write("<LI STYLE=\"margin-left: 20px;\">Group <A HREF=\"SICmetadata.html?sic="+upgrp+"&from="+myclass+"\">"+SICdisplay(upgrp)+": "+SICmeta[upgrp].title+"</A>");
+		};
+		if (SICtype == "Group" || SICtype == "Class" || SICtype == "Sub-class") {
+			document.write("<LI STYLE=\"margin-left: 20px;\">Division <A HREF=\"SICmetadata.html?sic="+updiv+"&from="+myclass+"\">"+SICdisplay(updiv)+": "+SICmeta[updiv].title+"</A>");
+		};
+		document.write("<LI STYLE=\"margin-left: 20px;\">Section: <A HREF=\"SICmetadata.html?sic="+upsec+"&from="+myclass+"\">"+SICdisplay(upsec)+": "+SICmeta[upsec].title+"</A>");
+		document.write("</UL>\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+
+	// if this was further up the hierarchy than a Sub-class, or a Class with no Sub-classes, display its subcomponents
+	if (SICmeta[myclass]) {
+		if (SICtype == "Section" || SICtype == "Division" || SICtype == "Group" || (SICtype == "Class" && (SICmeta[myclass.substr(0,5) + "0"] || SICmeta[myclass.substr(0,5) + "1"] || SICmeta[myclass.substr(0,5) + "9"]))) {
+			document.write("<!-- start the fifth white box of information -->");
+			document.write("<div id=\"ons-style-border\" style=\"padding-bottom: 9px;\"> <div id=\"ons-style-box\">");
+			document.write("<B>Subcomponents of this "+SICtype.toLowerCase()+" include:</B><UL STYLE=\"list-style-position: outside; display: inline;\">");
+			if (SICtype == "Class") {
+				for(i=0;i<10;i++){
+					upcls = myclass.substr(0,5) + i;
+					if (SICmeta[upcls]) {
+						document.write("<LI STYLE=\"margin-left: 20px;\">Sub-class <A HREF=\"SICmetadata.html?sic="+upcls+"&from="+myclass+"\">"+SICdisplay(upcls)+": "+SICmeta[upcls].title+"</A>");
+					};
+				};
+			};
+			if (SICtype == "Group") {
+				for(i=0;i<10;i++){
+					upcls = myclass.substr(0,4) + i + "x";
+					if (SICmeta[upcls]) {
+						document.write("<LI STYLE=\"margin-left: 20px;\">Class <A HREF=\"SICmetadata.html?sic="+upcls+"&from="+myclass+"\">"+SICdisplay(upcls)+": "+SICmeta[upcls].title+"</A>");
+					};
+				};
+			};
+			if (SICtype == "Division") {
+				for(i=0;i<10;i++){
+					upcls = myclass.substr(0,3) + i + "xx";
+					if (SICmeta[upcls]) {
+						document.write("<LI STYLE=\"margin-left: 20px;\">Group <A HREF=\"SICmetadata.html?sic="+upcls+"&from="+myclass+"\">"+SICdisplay(upcls)+": "+SICmeta[upcls].title+"</A>");
+					};
+				};
+			};
+			if (SICtype == "Section") {
+				for(i=1;i<100;i++){
+					upcls = myclass.substr(0,1) + (i<10?"0":"") + i + "xxx";
+					if (SICmeta[upcls]) {
+						document.write("<LI STYLE=\"margin-left: 20px;\">Division <A HREF=\"SICmetadata.html?sic="+upcls+"&from="+myclass+"\">"+SICdisplay(upcls)+": "+SICmeta[upcls].title+"</A>");
+					};
+				};
+			};
+			document.write("</UL>\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+		};
+	};
+
+	// force a back button into the system
+	document.write("<!-- start the final white box of information -->");
+	document.write("<div id=\"ons-style-border\" style=\"padding-bottom: 9px;\"> <div id=\"ons-style-box\">");
+	if (previous != 0) {
+		document.write("<A HREF=\"SICmetadata.html?sic="+previous+"&from="+myclass+"\" TITLE=\"link to return to previous page\">click here to return to code "+SICdisplay(previous)+"</A> or ");
+	};
+	document.write("<A HREF=\"../ONS_SIC_hierarchy_view.html\" TARGET=\"_blank\" TITLE=\"link to open the entire SIC hierarchy\">click here to view the entire SIC hierarchy</A>");
+	document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	</script>
+</div>
+<!-- end of main page content -->
+
+<!-- in case user does not have JS enabled -->
+<noscript>
+	<div>
+		<img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="" />
+		Your internet browser must have JavaScript enabled to view this content and use this functionality.
+	</div>
+</noscript>
+<!-- end -->
+
+				</div>
+<!-- end of footer div section -->
+		</div>
+<!-- end of main div -->
+	</div>
+<!-- end of wrap div -->
+</body>
+</html>
