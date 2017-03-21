@@ -1,0 +1,209 @@
+<html lang="en" xmlns:esi="http://www.edge-delivery.org/esi/1.0" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Robots" content="index,follow" />
+<meta name="DC.Coverage" content="UK" />
+<meta name="DC.Creator" content="ONS" />
+<meta name="DC.Language" content="eng" scheme="ISO 639-2/T" />
+<meta name="eGMS.Accessibility" content=".No Conformance" scheme="eGMS.WCAG10" />
+<meta name="DC.Title" content="ONS NS-SEC Coding Tool" />
+<meta name="DCTERMS.alternative" content="" />
+<meta name="DC.subject" content="" />
+<meta name="DC.Description" content="A tool to assist users discovering the NS-SEC code related to their occupation, for the purposes of classifying their occupation against National Statistical publications" />
+<meta name="DC.Source" content="Office for National Statistics" />
+<meta name="DC.Identifier" content="" scheme="eGMS.ISSN" />
+<meta name="eGMS.updatingFrequency" content="" />
+<title>ONS NS-SEC Coding Tool</title>
+
+<script type="text/javascript">
+	myclass=0;
+	// if this page was called with a code to display, identify said code
+	GETvars = window.location.search.replace("?","").split("&");
+	for (i=0;i<GETvars.length;i++) {
+		xVAR = GETvars[i].split("="); if(xVAR[1]) {
+			if (xVAR[0].toLowerCase() == "soc") { myclass = xVAR[1]; };
+		};
+	};
+
+	function openquestion() {
+		if (myclass != 0) {
+			z = window.open('data/NSSECquestion.html?newsoc='+myclass,'_blank','channelmode=no,directories=no,fullscreen=no,height=450,left=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top=50,width=700',false);
+		} else {
+			z = window.open('data/NSSECquestion.html','_blank','channelmode=no,directories=no,fullscreen=no,height=450,left=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top=50,width=700',false);
+		};
+	};
+</script>
+
+<style type="text/css"><!--
+html, body {
+	height: 100%;
+	background-color: #EFEFEF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+}
+#wrap { min-height: 100%; }
+#main { height: 100%; }
+
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+a { color:#005582; text-decoration:none; }
+a:hover { color:#000000; text-decoration:underline; }
+a:visited { color:#551A8B; text-decoration:none; }
+h1 { font-size:112.5%; display:inline; }
+h2 { font-size:100%; display:inline; }
+
+#td {
+background-color:transparent;
+}
+.lo {
+background-color:transparent;
+}
+.hi {
+background-color:#B9CC4C;
+}
+
+#maincontent {
+	margin: 0px;
+}
+#banner {
+	background-image: url(http://www.ons.gov.uk/ons/resources/onsbannerlayer_tcm77-30118.jpg);
+	background-position: top right;
+	background-repeat: no-repeat;
+	background-color: #003D59;
+	height: 115px;
+	width: 100%;
+	}
+span.soc-class { color:#005582; text-decoration:underline; cursor: pointer; }
+.SOCbutton {
+	border: 0;
+	margin: 3px 0 0 0;
+	padding: 0 0 0 0;
+	color: #003D59;
+	background-color: #B7C846;
+	background-image: url(data/button_back.png);
+	height: 22px;
+	width: 140px;
+	font-size: 80%;
+	font-weight: bold;
+	cursor: pointer;
+	}
+
+#logo { padding: 30px 0px 0px 28px; float: left; }
+#logo img { border:none; }
+#crowncopyright{ display: none; }
+#wrapper{/* enforces left and right page border */
+ background-color: #EFEFEF;
+ padding: 0px 18px 0px 6px;
+}
+
+#ons-style-border{ padding: 3px 9px 3px 10px; }
+#ons-style-box{
+	border: 1px solid #D9E1E5;
+	float: left;
+	background-color: #ffffff;
+	color: #383838;
+	width: 100%;
+	padding: 6px 6px 6px 8px;
+	margin-bottom: 3px;
+	}
+--></style>
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+<!--[if lt IE 9 ]>
+	<style type="text/css">
+	#wrapper{/* enforces left and right page border */
+	background-color: #EFEFEF;
+	padding: 0% 1.5% 0% 1%;
+	}
+	#ons-style-border{ padding: 0% 0% 0% 1%; }
+	#ons-style-box{
+	border: 1px solid #D9E1E5;
+	float: left;
+	background-color: #ffffff;
+	color: #383838;
+	width: 95%;
+	padding: 0.5% 1% 0.5% 1%;
+	margin-bottom: 3px;
+	}
+	</style>
+<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<div id="main">
+<!-- page banner -->
+				<div id="banner" xmlns:esi="http://www.edge-delivery.org/esi/1.0">
+					<div id="logo"><A HREF="http://www.ons.gov.uk" TARGET="_self" TITLE="Link to The Office for National Statistics web-site"><img src="./data/logo.jpg" title="Office for National Statistics logo" alt="Office for National Statistics logo" width="50" height="50"  class="bannerimage"/></A></div>
+				</div>
+<!-- end of page banner -->
+<!-- start of main page content -->
+				<div id="maincontent">
+<!-- start the breadcrumb link trail -->
+	<div style="padding: 10px 0px 6px 0px; border-bottom: 1px solid #CCCCCC; margin-bottom: 12px; float: left; background-color: #ffffff; color: #383838; font-size: 68.75%; width: 100%;">
+	<div style="padding: 0px 9px 0px 12px;">
+		You are here: <A HREF="http://www.ons.gov.uk/ons/index.html" TARGET="_self">Home</A> &gt; <A HREF="http://www.ons.gov.uk/ons/guide-method/index.html" TARGET="_self">Guidance and Methodology</A> &gt; <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/index.html" TARGET="_self">Current standard classifications</A> &gt; <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/index.html" TARGET="_self">Standard Occupational Classification 2010 (SOC2010)</A> &gt; <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/classifications-coding-tools/index.html" TARGET="_self">Classifications Coding Tools</A> &gt; NS-SEC Coding Tool
+	</div></div><!-- end of breadcrumb link trail -->
+<div id="wrapper">
+
+<!-- start the first white box of information -->
+	<div id="ons-style-border" style="padding-top: 7px;"> <div id="ons-style-box">
+		<h1>National Statistics Socio-economic Classification (NS-SEC) Coding Tool</h1>
+	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
+<!-- start the second white box of information -->
+	<div id="ons-style-border"> <div id="ons-style-box">
+					<h2>What is this?</h2>
+					<FONT STYLE="font-size: 80%;">
+<BR><BR>This National Statistics Socio-economic Classification (NS-SEC) Coding Tool has been developed to assist users with the correct coding of NS-SEC.
+NS-SEC is a measure of employment relations and conditions of occupations. These are central to showing the structure of socio-economic positions in modern societies and helping to explain variations in social behaviour and other social phenomena.  For more information on NS-SEC please <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/soc2010-volume-3-ns-sec--rebased-on-soc2010--user-manual/index.html">click here</A>, and if you require any assistance coding NS-SEC please contact the <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/contact-soc2010/index.html">Occupation and Social Classifications Helpdesk</A>.
+					</FONT>
+	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
+<!-- start the third white box of information -->
+	<div id="ons-style-border"> <div id="ons-style-box">
+					<FONT STYLE="font-size: 80%;">
+<B>To begin discovering your NS-SEC code, please click this button:</B> <INPUT TYPE="BUTTON" CLASS="SOCbutton" VALUE="Start NS-SEC tool" onclick="openquestion();" />
+<BR><BR>If you do not know your SOC 2010 code it can found using <A HREF="ONS_SOC_occupation_coding_tool.html" TARGET="_self" TITLE="Link to the SOC 2010 Occupation Coding Tool">Occupation Coding Tool</A> or <A HREF="ONS_SOC_hierarchy_view.html" TARGET="_self" TITLE="Link to the SOC 2010 Hierarchy viewing tool">SOC 2010 Hierarchy</A>:
+<BR><BR>In order to derive NS-SEC you will be asked a maximum of 3 questions. These questions will ask about your employment status and dependent on your answers also size of organisation and supervisor status. None of your answers are stored on any databases nor sent anywhere.
+<BR><BR>There are 3 methods to derive NS-SEC; these are the full, reduced, and simplified methods. The difference between these methods relates the information available to derive them. This NS-SEC Coding Tool will use the most appropriate methodology based on the information you provide. When you are presented with your NS-SEC information you will be presented with 2 pieces of information, an analytic class number, and an operational sub-category number. The operational sub-categories are subdivisions of the analytic class. For further information about the different derivation methods, analytic classes and operational categories, please refer to the <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/soc2010-volume-3-ns-sec--rebased-on-soc2010--user-manual/index.html" TARGET="_blank" TITLE="Link to the NS-SEC user manual">NS-SEC user manual</A>.
+					</FONT>
+	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
+</div>
+<!-- end of main page content -->
+<!-- div section containing the entire page footer, including spacing, web trends, etc -->
+				<div id="entirefoot">
+					<div xmlns:esi="http://www.edge-delivery.org/esi/1.0" id="crowncopyright">Content�from the Office for National Statistics.<br/>� Crown Copyright applies unless otherwise stated.</div>
+					<!-- in case user does not have JS enabled -->
+					<noscript>
+						<div>
+							<img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="" />
+							Your internet browser must have JavaScript enabled to view this content and use this functionality.
+						</div>
+					</noscript>
+					<!-- end -->
+				</div>
+<!-- end of footer div section -->
+		</div>
+<!-- end of main div -->
+	</div>
+<!-- end of wrap div -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56892037-19', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

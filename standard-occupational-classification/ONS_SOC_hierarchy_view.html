@@ -1,0 +1,248 @@
+<html lang="en" xmlns:esi="http://www.edge-delivery.org/esi/1.0" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Robots" content="index,follow" />
+<meta name="DC.Coverage" content="UK" />
+<meta name="DC.Creator" content="ONS" />
+<meta name="DC.Language" content="eng" scheme="ISO 639-2/T" />
+<meta name="eGMS.Accessibility" content=".No Conformance" scheme="eGMS.WCAG10" />
+<meta name="DC.Title" content="ONS Standard Occupational Classification (SOC) Hierarchy" />
+<meta name="DCTERMS.alternative" content="" />
+<meta name="DC.subject" content="" />
+<meta name="DC.Description" content="A tool to assist users discovering the SOC code related to their occupation, for the purposes of classifying their occupation against National Statistical publications" />
+<meta name="DC.Source" content="Office for National Statistics" />
+<meta name="DC.Identifier" content="" scheme="eGMS.ISSN" />
+<meta name="eGMS.updatingFrequency" content="" />
+<title>ONS Standard Occupational Classification (SOC) Hierarchy</title>
+
+<script type="text/javascript" src="http://www.ons.gov.uk/ons/js/main.js"></script>
+<script type="text/javascript" src="data/js/soc_support_js.js"></script>
+<script type="text/javascript" src="data/socDB.js"></script>
+
+<script type="text/javascript">
+	// call this function to either show or hide a specific part of the hierarchy
+	function showhide(mypart) {
+		if (document.getElementById(mypart + "parts").style.display == "block") {
+			document.getElementById(mypart + "parts").style.display = "none";
+			document.getElementById(mypart + "link").src = "data/img-plus.png";
+		} else {
+			document.getElementById(mypart + "parts").style.display = "block";
+			document.getElementById(mypart + "link").src = "data/img-down.png";
+		};
+	};
+	function showhideall(disp,pict) {
+		for (i=1;i<10;i++){
+			if (document.getElementById("majorgroup" + i + "parts")) {
+				document.getElementById("majorgroup" + i + "parts").style.display = disp;
+				document.getElementById("majorgroup" + i + "link").src = "data/img-"+pict+".png";
+			};
+		};
+		for (i=10;i<99;i++){
+			if (document.getElementById("submajorgroup" + i + "parts")) {
+				document.getElementById("submajorgroup" + i + "parts").style.display = disp;
+				document.getElementById("submajorgroup" + i + "link").src = "data/img-"+pict+".png";
+			};
+		};
+		for (i=100;i<999;i++){
+			if (document.getElementById("minorgroup" + i + "parts")) {
+				document.getElementById("minorgroup" + i + "parts").style.display = disp;
+				document.getElementById("minorgroup" + i + "link").src = "data/img-"+pict+".png";
+			};
+		};
+	};
+
+	// build the actual hierarchy based on entries in the database
+	function updatepage() {
+		fulltext = "";
+		for (ti=1;ti<10;ti++) {
+			thiscls1 = ti;
+			if (socDB[thiscls1]) { fulltext = fulltext + "\n<div id=\"majorgroup" + thiscls1 + "\" class=\"soc-majorgroup\"><img src=\"data/img-plus.png\" class=\"img-plus\" id=\"majorgroup" + thiscls1 +"link\" title=\"click here to open the components of this soc\" onclick=\"showhide('majorgroup" + thiscls1 + "');\"/><SPAN CLASS=\"listitemlo\" title=\"click here to view details of this SOC\" onmouseover=\"this.className='listitemhi';\" onmouseout=\"this.className='listitemlo';\" onclick=\"openinfo(0,'"+thiscls1+"');\">Major Group " + thiscls1 + ": " + socDB[thiscls1].unit + "</SPAN></div>\n<div id=\"majorgroup" + thiscls1 + "parts\" style=\"display: none;\">\n"; };
+			for (tii=1;tii<10;tii++) {
+				thiscls2 = (ti*10)+tii;
+				if (socDB[thiscls2]) { fulltext = fulltext + "<div id=\"submajorgroup" + thiscls2 + "\" class=\"soc-submajorgroup\" style=\"padding-bottom:5px;\"><img src=\"data/img-blank.jpg\" class=\"img-blank\"/><img src=\"data/img-plus.png\" class=\"img-plus\" id=\"submajorgroup" + thiscls2 +"link\" title=\"click here to open the components of this soc\" onclick=\"showhide('submajorgroup" + thiscls2 + "');\"/><SPAN CLASS=\"listitemlo\" title=\"click here to view details of this SOC\" onmouseover=\"this.className='listitemhi';\" onmouseout=\"this.className='listitemlo';\" onclick=\"openinfo(0,'"+thiscls2+"');\">Sub-Major Group " + thiscls2 + ": " + socDB[thiscls2].unit + "</SPAN></div>\n<div id=\"submajorgroup" + thiscls2 + "parts\" style=\"display: none;\">\n"; };
+				for (tiii=1;tiii<10;tiii++) {
+					thiscls3 = (ti*100)+(tii*10)+tiii;
+					if (socDB[thiscls3]) { fulltext = fulltext + "<div id=\"minorgroup" + thiscls3 + "\" class=\"soc-minorgroup\" style=\"padding-bottom:4px;\"><img src=\"data/img-blank.jpg\" class=\"img-blank\"/><img src=\"data/img-blank.jpg\" class=\"img-blank\"/><img src=\"data/img-plus.png\" class=\"img-plus\" id=\"minorgroup" + thiscls3 +"link\" title=\"click here to open the components of this soc\" onclick=\"showhide('minorgroup" + thiscls3 + "');\"/><SPAN CLASS=\"listitemlo\" title=\"click here to view details of this SOC\" onmouseover=\"this.className='listitemhi';\" onmouseout=\"this.className='listitemlo';\" onclick=\"openinfo(0,'"+thiscls3+"');\">Minor Group " + thiscls3 + ": " + socDB[thiscls3].unit + "</SPAN></div>\n<div id=\"minorgroup" + thiscls3 + "parts\" style=\"display: none;\">\n"; };
+					for (tiv=0;tiv<10;tiv++) {
+						thiscls4 = (ti*1000)+(tii*100)+(tiii*10)+tiv;
+						if (socDB[thiscls4]) { fulltext = fulltext + "<div id=\"unitgroup" + thiscls4 + "\" class=\"soc-unitgroup\" style=\"padding-bottom:2px;\"><img src=\"data/img-blank.jpg\" class=\"img-blank\"/><img src=\"data/img-blank.jpg\" class=\"img-blank\"/><img src=\"data/img-blank.jpg\" class=\"img-blank\"/><img src=\"data/img-blank.jpg\" class=\"img-blank\"/>&nbsp;<SPAN CLASS=\"listitemlo\" title=\"click here to view details of this SOC\" onmouseover=\"this.className='listitemhi';\" onmouseout=\"this.className='listitemlo';\" onclick=\"openinfo(0,'"+thiscls4+"');\">Unit Group " + thiscls4 + ": " + socDB[thiscls4].unit + "</SPAN></div>"; };
+					};
+					if (socDB[thiscls3]) { fulltext = fulltext + "\n</div>"; };
+				};
+				if (socDB[thiscls2]) { fulltext = fulltext + "\n</div>"; };
+			};
+			if (socDB[thiscls1]) { fulltext = fulltext + "\n</div>"; };
+		};
+		document.getElementById("results-table").innerHTML = fulltext;
+	};
+</script>
+
+<style type="text/css"><!--
+html, body {
+	height: 100%;
+	background-color: #EFEFEF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+}
+#wrap { min-height: 100%; }
+#main { height: 100%; }
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+a { color:#005582; text-decoration:none; }
+a:hover { color:#000000; text-decoration:underline; }
+a:visited { color:#551A8B; text-decoration:none; }
+h1 { font-size:112.5%; display:inline; }
+h2 { font-size:100%; display:inline; }
+
+#td {
+background-color:transparent;
+}
+.lo {
+background-color:transparent;
+}
+.hi {
+background-color:#B9CC4C;
+}
+
+#maincontent {
+	margin: 0px;
+}
+#banner {
+	background-image: url(http://www.ons.gov.uk/ons/resources/onsbannerlayer_tcm77-30118.jpg);
+	background-position: top right;
+	background-repeat: no-repeat;
+	background-color: #003D59;
+	height: 115px;
+	width: 100%;
+	}
+.img-plus { width: 14px; height: 14px; vertical-align: middle; cursor: pointer; }
+.img-hyph { width: 14px; height: 14px; vertical-align: middle; cursor: pointer; }
+.img-blank { width: 14px; height: 14px; vertical-align: middle; cursor: pointer; }
+span.listitemlo { color:#005582; cursor: pointer; background-color=transparent; text-decoration: none; }
+span.listitemhi { color:#005582; cursor: pointer; background-color='#D7E866'; text-decoration: underline; }
+span.soc-class { color:#005582; backgroundColor='transparent'; text-decoration: none; }
+div.soc-majorgroup { padding: 5px 0px 5px 0px; vertical-align: middle; font-size: 115%; font-weight: bold; };
+div.soc-submajorgroup { padding: 4px 0px 4px 0px; vertical-align: middle; font-size: 100%; font-weight: bold; };
+div.soc-minorgroup { padding: 3px 0px 3px 0px; vertical-align: middle; font-size: 90%; font-weight: bold; };
+div.soc-unitgroup { padding: 2px 0px 2px 0px; vertical-align: middle; font-size: 90%; };
+#logo { padding: 30px 0px 0px 28px; float: left; }
+#logo img { border:none; }
+#crowncopyright{ display: none; }
+#wrapper{/* enforces left and right page border */
+ background-color: #EFEFEF;
+ padding: 0px 18px 0px 6px;
+}
+
+#ons-style-border{ padding: 3px 9px 3px 10px; }
+#ons-style-box{
+	border: 1px solid #D9E1E5;
+	float: left;
+	background-color: #ffffff;
+	color: #383838;
+	width: 100%;
+	padding: 6px 6px 6px 8px;
+	margin-bottom: 3px;
+	}
+--></style>
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+<!--[if lt IE 9 ]>
+	<style type="text/css">
+	#wrapper{/* enforces left and right page border */
+	background-color: #EFEFEF;
+	padding: 0% 1.5% 0% 1%;
+	}
+	#ons-style-border{ padding: 0% 0% 0% 1%; }
+	#ons-style-box{
+	border: 1px solid #D9E1E5;
+	float: left;
+	background-color: #ffffff;
+	color: #383838;
+	width: 95%;
+	padding: 0.5% 1% 0.5% 1%;
+	margin-bottom: 3px;
+	}
+	</style>
+<![endif]-->
+</head>
+<body onload="updatepage();">
+	<div id="wrap">
+		<div id="main">
+<!-- page banner -->
+				<div id="banner" xmlns:esi="http://www.edge-delivery.org/esi/1.0">
+					<div id="logo"><A HREF="http://www.ons.gov.uk" TARGET="_self" TITLE="Link to The Office for National Statistics web-site"><img src="./data/logo.jpg" title="Office for National Statistics logo" alt="Office for National Statistics logo" width="50" height="50"  class="bannerimage"/></A></div>
+				</div>
+<!-- end of page banner -->
+<!-- start of main page content -->
+				<div id="maincontent">
+<!-- start the breadcrumb link trail -->
+	<div style="padding: 10px 0px 6px 0px; border-bottom: 1px solid #CCCCCC; margin-bottom: 12px; float: left; background-color: #ffffff; color: #383838; font-size: 68.75%; width: 100%;">
+	<div style="padding: 0px 9px 0px 12px;">
+		You are here: <A HREF="http://www.ons.gov.uk/ons/index.html" TARGET="_self">Home</A> &gt; <A HREF="http://www.ons.gov.uk/ons/guide-method/index.html" TARGET="_self">Guidance and Methodology</A> &gt; <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/index.html" TARGET="_self">Current standard classifications</A> &gt; <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/index.html" TARGET="_self">Standard Occupational Classification 2010 (SOC2010)</A> &gt; <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/classifications-coding-tools/index.html" TARGET="_self">Classifications Coding Tools</A> &gt; Occupational Classification Hierarchy
+	</div></div><!-- end of breadcrumb link trail -->
+<div id="wrapper">
+
+<!-- start the first white box of information -->
+	<div id="ons-style-border" style="padding-top: 7px;"> <div id="ons-style-box">
+		<h1>ONS Standard Occupational Classification (SOC) Hierarchy</h1>
+	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
+<!-- start the second white box of information -->
+	<div id="ons-style-border"> <div id="ons-style-box">
+					<h2>What is this?</h2>
+					<FONT STYLE="font-size: 80%;">
+						<BR><BR>Use the selection system below to navigate to the Standard Occupational Classification of relevance to you. Start with the highest level (Major Group), and click on the plus sign next to the most relevant section to you to show the next level of the hierarchy (Sub-Major Groups and Minor Groups) until you find your appropriate code (Unit Group). If you wish to know more about any level of this process, click on the text for further information about it.
+						<BR><BR>If you want help finding your SOC 2010 code, try using the <A HREF="ONS_SOC_occupation_coding_tool.html" TARGET="_self" TITLE="Link to the SOC 2010 Occupation Coding Tool" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Occupation Coding Tool</A>.
+						<BR>If you know your SOC code and want to find your NS-SEC code, you can use the <A HREF="ONS_NSSEC_discovery_tool.html" TARGET="_self" TITLE="Link to the NS-SEC Coding Tool" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">NS-SEC Coding Tool</A>.
+						<BR><BR>If you have any questions, or would like to comment, please contact the <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/contact-soc2010/index.html?format=print" TARGET="_blank" TITLE="Link to details for contacting the Classification helpdesk team">Occupation and Social Classification Helpdesk</A>.
+					</FONT>
+	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
+<!-- start the third white box of information -->
+	<div id="ons-style-border"> <div id="ons-style-box">
+					<h2>The SOC Hierarchy</h2>
+					<FONT STYLE="font-size: 80%;">
+						<BR><BR>Use these links to <SPAN CLASS="soc-class" STYLE="color:#005582; cursor: pointer;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';" onclick="showhideall('block','down');">show all groups</SPAN> or to <SPAN CLASS="soc-class" STYLE="color:#005582; cursor: pointer;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';" onclick="showhideall('none','plus');">hide all groups</SPAN>.
+						<BR><BR><SPAN id="results-table">Please give the web page a moment to load. If this text does not change, you must enable JavaScript in your internet browser to use this tool (or the JavaScript code failed).</SPAN>
+					</FONT>
+				</div>
+	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
+</div>
+<!-- end of main page content -->
+<!-- div section containing the entire page footer, including spacing, web trends, etc -->
+				<div id="entirefoot">
+					<div xmlns:esi="http://www.edge-delivery.org/esi/1.0" id="crowncopyright">Content�from the Office for National Statistics.<br/>� Crown Copyright applies unless otherwise stated.</div>
+					<!-- in case user does not have JS enabled -->
+					<noscript>
+						<div>
+							<img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="" />
+							Your internet browser must have JavaScript enabled to view this content and use this functionality.
+						</div>
+					</noscript>
+					<!-- end -->
+				</div>
+<!-- end of footer div section -->
+		</div>
+<!-- end of main div -->
+	</div>
+<!-- end of wrap div -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56892037-19', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

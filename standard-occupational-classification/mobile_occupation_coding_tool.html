@@ -1,0 +1,346 @@
+<html lang="en" xmlns:esi="http://www.edge-delivery.org/esi/1.0" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Robots" content="index,follow" />
+<meta name="DC.Coverage" content="UK" />
+<meta name="DC.Creator" content="ONS" />
+<meta name="DC.Language" content="eng" scheme="ISO 639-2/T" />
+<meta name="eGMS.Accessibility" content=".No Conformance" scheme="eGMS.WCAG10" />
+<meta name="DC.Title" content="ONS Occupation Coding Tool" />
+<meta name="DCTERMS.alternative" content="" />
+<meta name="DC.subject" content="" />
+<meta name="DC.Description" content="A tool to assist users discovering the SOC code related to their occupation, for the purposes of classifying their occupation against National Statistical publications" />
+<meta name="DC.Source" content="Office for National Statistics" />
+<meta name="DC.Identifier" content="" scheme="eGMS.ISSN" />
+<meta name="eGMS.updatingFrequency" content="" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+<title>ONS Occupation Coding Tool</title>
+
+	<link href="data/js/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	<script src="data/js/jquery-1.6.2.min.js"></script>
+	<script src="data/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script type="text/javascript" src="http://www.ons.gov.uk/ons/js/main.js"></script>
+	<script type="text/javascript" src="data/js/soc_support_js.js"></script>
+	<script type="text/javascript" src="data/socDB.js"></script>
+
+	<script type="text/javascript">	stayhere = false; ismobilebrowser = false; </script>
+	<script type="text/javascript" src="data/js/detectmobilebrowser.js"></script>
+	<script type="text/javascript">
+		// if this page was called with a code to display, identify said code
+		GETvars = window.location.search.replace("?","").split("=");
+		loadedsearch = "";
+		if (GETvars) {
+			if (GETvars[0] == "soc") { loadedsearch = GETvars[1].replace("%20"," "); };
+			if (GETvars[0] == "fullversion") { if (GETvars[1].toLowerCase()=="yes"){stayhere=false;ismobilebrowser=false;}; if (GETvars[1].toLowerCase()=="no"){stayhere=true;ismobilebrowser=true;}; };
+		};
+		// if the user is using a normal browser, and they have not specified to use the mobile tool, redirect to the normal version
+		if (!ismobilebrowser && !stayhere) { window.location="ONS_SOC_occupation_coding_tool.html"; };
+	</script>
+
+<script type="text/javascript">
+	// define a few basic global arrays to contain data
+	var myArray = [];
+	var socREC = [];
+	var replacementword_full_1 = [];
+	var replacementword_full_2 = [];
+	var replacementword_sngl_1 = [];
+	var replacementword_sngl_2 = [];
+	var job_dictionary = [];
+	var defaultnorecords = 20;
+	var displayed = 0;
+	var wholedisplaytext = "";
+	var changes_to_text = "";
+	var numTOtext = new Array("zero", "one", "two", "three", "four", "five","six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty");
+	// NB if you need more, just add them to the string
+
+	// once the document has loaded, import the raw data we need for the functionality
+	// NB this makes use of JQuery predefined codes
+	 $(document).ready(function(){
+			 $.ajax({
+						type:"GET",
+						url:"data/jobrecords.txt",
+						dataType:"text",
+						success:onLoadDatabase
+			 })
+			 $.ajax({
+						type:"GET",
+						url:"data/replacements-full.txt",
+						dataType:"text",
+						success:onLoadReplaceFull
+			 })
+			 $.ajax({
+						type:"GET",
+						url:"data/replacements-single.txt",
+						dataType:"text",
+						success:onLoadReplaceSngl
+			 })
+			 updatePbar("progressbar_srch",0);
+			 updatePbar("progressbar_mtch",0);
+			 updatePbar("progressbar_oput",0);
+			 //document.pinpoint_form.search_term.focus();
+			 document.getElementById("search_jobs").disabled = false;
+			 refresh_table();
+	 });//end ready function
+
+	// define the SOC code database using the imported data
+			 function onLoadDatabase(data)
+	 {
+			 myArray = data.split("\n");
+			 for (i=0;i<myArray.length;i++) {
+					 fullterm = "";
+					 tempvalue = myArray[i].split("#");
+					 // replace all the following in order: ,*: then leading/trailing spaces...
+					 // then anything except a-z,0-9 and ' then any line breaks then any tabs
+					 extrawords = tempvalue[1].replace(/^,*:/g," ").replace(/^\s+|\s+$/g,'').toLowerCase();
+					 extrawords = extrawords.replace(/[^a-z0-9' ]+/g,'').replace(/(\r\n|\n|\r)/gm,"").replace(/(\t)/gm,"");
+					 //'
+					 extrawords = extrawords.replace(/[ ]/g,"#");
+					// if there are any numbers, replace them with words
+					otherwords = extrawords.split("#");
+					for (j=0;j<otherwords.length;j++) {
+						if (otherwords[j] == 0 || otherwords[j] == 1 || otherwords[j] == 2 || otherwords[j] == 3 || otherwords[j] == 4 || otherwords[j] ==  5 || otherwords[j] == 6 || otherwords[j] == 7 || otherwords[j] == 8 || otherwords[j] == 9 || otherwords[j] == 10 || otherwords[j] == 11 || otherwords[j] ==  12 || otherwords[j] == 13 || otherwords[j] == 14 || otherwords[j] == 15 || otherwords[j] == 16 || otherwords[j] == 17 || otherwords[j] == 18 || otherwords[j] == 19 || otherwords[j] == 20) { otherwords[j] = convertnumber(otherwords[j]); };
+	// meanwhile generate an entire dictionary of individual words contained within job titles
+						job_dictionary[otherwords[j]] = 0;
+					};
+					extrawords = otherwords.join("#");
+
+					fullterm = 0 + "#" + tempvalue[1] + "#" + tempvalue[0] + "#" + extrawords;
+					socREC[i] = fullterm.split("#");
+			 };
+	 };
+	// define any search words we need to replace (full phrases)
+	 function onLoadReplaceFull(data)
+	 {
+			 myArray = data.split("\n");
+			 for (i=0;i<myArray.length;i++) {
+					 tempvalue = myArray[i].split("#");
+					 replacementword_full_1[i] = tempvalue[0].toLowerCase();
+					 replacementword_full_2[i] = tempvalue[1].replace(/(\r\n|\n|\r)/gm,"").toLowerCase();
+			 };
+	 };
+	// define any search words we need to replace (single words)
+	 function onLoadReplaceSngl(data)
+	 {
+			 myArray = data.split("\n");
+			 for (i=0;i<myArray.length;i++) {
+					 tempvalue = myArray[i].split("#");
+					 replacementword_sngl_1[i] = tempvalue[0].toLowerCase();
+					 replacementword_sngl_2[i] = tempvalue[1].replace(/(\r\n|\n|\r)/gm,"").toLowerCase();
+			 };
+	 };
+	// if the user presses the 'Enter' key, handle it properly...
+	//   ie submit the form but not through the standard FORM system
+	 function disableEnterKey(e,n) {
+		var key;
+		if(window.event) {
+			key = window.event.keyCode; // for IE
+		} else {
+			key = e.which; // for FF
+		};
+		if(key==13) {
+			if(n == 0) { showknownterm(); return false; };
+			if(n == 1) { refresh_table(); return false; };
+			if(n > 1) { return false; };
+		} else { return true; };
+	 };
+</script>
+
+<style type="text/css"><!--
+html, body {
+	height: 100%;
+	background-color: #EFEFEF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	color: #000000;
+	margin: 0px 1px 0px 0px;
+	padding: 0px;
+}
+#wrap { min-height: 100%; }
+#main { height: 100%; }
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+a { color:#005582; text-decoration:underline; }
+a:hover { color:#000000; text-decoration:underline; }
+a:visited { color:#551A8B; text-decoration:underline; }
+h2 { font-size:100%; padding:3px 0px 0px 0px; }
+
+#td {
+background-color:transparent;
+}
+.lo {
+background-color:transparent;
+}
+.hi {
+background-color:#B9CC4C;
+}
+
+#maincontent {
+	margin: 0px;
+}
+span.soc-class { color:#005582; text-decoration:underline; cursor: pointer; }
+.ui-progressbar { background: #C0EDF9; }
+.ui-progressbar .ui-progressbar-value { background: #003D59; }
+.SOCbutton {
+	border: 0;
+	margin: 3px 0 0 0;
+	padding: 0 0 0 0;
+	color: #003D59;
+	background-color: #B7C846;
+	background-image: url(data/button_back.png);
+	height: 22px;
+	width: 140px;
+	font-size: 90%;
+	font-weight: bold;
+	cursor: pointer;
+	}
+
+#logo { float: right; background-color: #003D59; height: 50px; width: 160px; padding: 20px 10px 0px 5px; }
+#logo img { padding: 5px 5px 5px 10px; border:none; }
+#crowncopyright{ display: none; }
+#wrapper{/* enforces left and right page border */
+ background-color: #EFEFEF;
+ padding: 0px 18px 0px 6px;
+}
+
+#ons-style-border{ padding: 3px 9px 3px 10px; }
+#ons-style-box{
+	border: 1px solid #D9E1E5;
+	float: left;
+	background-color: #ffffff;
+	color: #383838;
+	width: 100%;
+	padding: 6px 6px 6px 8px;
+	margin-bottom: 3px;
+}
+--></style>
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+<!--[if lt IE 9 ]>
+	<style type="text/css">
+	#wrapper{/* enforces left and right page border */
+	background-color: #EFEFEF;
+	padding: 0% 1.5% 0% 1%;
+	}
+	#ons-style-border{ padding: 0% 0% 0% 1%; }
+	#ons-style-box{
+	border: 1px solid #D9E1E5;
+	float: left;
+	background-color: #ffffff;
+	color: #383838;
+	width: 95%;
+	padding: 0.5% 1% 0.5% 1%;
+	margin-bottom: 3px;
+	}
+	</style>
+<![endif]-->
+</head>
+<body onload="document.pinpoint_form.search_term.value = loadedsearch;">
+	<div id="wrap">
+		<div id="main">
+			<form ID="pinpoint_form" NAME="pinpoint_form" onsubmit="refresh_table();">
+<!-- page banner -->
+				<div id="banner" style="background-color: #003D59; width: 100%;">
+					<div id="logo"><A HREF="http://www.ons.gov.uk" TARGET="_self" TITLE="Link to The Office for National Statistics web-site"><img src="./data/logo.jpg" title="Office for National Statistics logo" alt="Office for National Statistics logo" width="50" height="50" class="bannerimage"/></A></div>
+					<SPAN STYLE="font-size:112.5%; background-color: #003D59; display:inline; float: left; height: 72px; font-weight: bold; line-height: 24px; color: #FFFFFF; padding: 5px 5px 5px 10px;">Occupation<BR>Coding<BR>Tool</SPAN>
+					<div style="clear:both; display:block;"></div>
+				</div>
+<!-- end of page banner -->
+<!-- start of main page content -->
+				<div id="maincontent">
+
+<div id="wrapper">
+<!-- start the first white box of information -->
+	<div id="ons-style-border" style="padding-top: 7px;"> <div id="ons-style-box">
+					<FONT STYLE="font-size: 80%;">
+					This tool assists users in coding occupation titles. For further information about it, please refer to the <A HREF="ONS_SOC_occupation_coding_tool.html?fullversion=yes" TARGET="_self" TITLE="Redirect to the full version of this tool">full version of this tool</A>, or alternatively you can use the <A HREF="ONS_SOC_hierarchy_view.html" TARGET="_self" TITLE="Link to the SOC 2010 Hierarchy viewing tool">SOC Hierarchy</A>.
+					<BR><BR>For more information about SOC and coding, please refer to the <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/soc2010-volume-2-the-structure-and-index/index.html" TARGET="_blank" TITLE="Link to the SOC 2010 Volume 2 coding index">SOC 2010 coding index</A>, or contact the <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/contact-soc2010/index.html?format=print" TARGET="_blank" TITLE="Link to details for contacting the Classification helpdesk team">Classifications Helpdesk</A>.
+					<BR><BR>Once you perform a search, you can click on the result links presented to confirm if a code is appropriate, and <A HREF="ONS_NSSEC_discovery_tool.html" TARGET="_self" TITLE="Discover your NS-SEC code">find your related NS-SEC code</A>.
+					</FONT>
+	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
+<!-- start the third white box of information -->
+	<div id="ons-style-border"> <div id="ons-style-box">
+					<SPAN id="known_term" STYLE="font-family: Arial, Helvetica, sans-serif; display: block;" WIDTH="100%">
+						<H2 STYLE="display:inline">If you want to know more about an occupation code</H2><FONT STYLE="font-size: 80%;">, please type it here:
+						<INPUT TYPE="TEXTBOX" NAME="known_term" VALUE="" style="width: 40px;" onKeyPress="return disableEnterKey(event,0);"/>
+						<INPUT ID="known_jobs" TYPE="BUTTON" CLASS="SOCbutton" VALUE="Show specific SOC" onclick="showknownterm();" />
+					</FONT></SPAN>
+	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
+<!-- start the fourth white box of information -->
+	<div id="ons-style-border"> <div id="ons-style-box">
+						<H2 STYLE="display:inline">If you need to find an occupation code</H2><FONT STYLE="font-size: 80%;">, please type your occupation title here:
+						<SPAN id="search_section" STYLE="font-family: Arial, Helvetica, sans-serif; display: block;" WIDTH="100%">
+							<INPUT TYPE="TEXTBOX" NAME="search_term" VALUE="" style="width: 260px;" onKeyPress="return disableEnterKey(event,1);"/>
+							<INPUT ID="search_jobs" TYPE="BUTTON" CLASS="SOCbutton" DISABLED="DISABLED" VALUE="Search" onclick="refresh_table();" />
+							<INPUT ID="search_cancel" TYPE="BUTTON" CLASS="SOCbutton" DISABLED="DISABLED" VALUE="Cancel search" onclick="killme=true;" />
+						</SPAN>
+					</FONT>
+	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
+<!-- start the fifth white box of information -->
+	<div id="ons-style-border"> <div id="ons-style-box">
+					<H2 STYLE="display:inline;">Results of your search</H2>
+					<FONT STYLE="font-size: 80%;">
+						<BR>
+						<BR>
+						<SPAN id="results_table" STYLE="font-family: Arial, Helvetica, sans-serif; display: block;" WIDTH="100%">
+							Please give the web page a moment to load. If this text does not change, you must enable JavaScript in your internet browser to use this tool (or the JavaScript code failed).
+						</SPAN>
+						<div id="progressbarwrapper" style="display: none;">
+							<div id="progresstitle" style="font-weight: bold;">Please wait, searching for occupation titles:</div><BR>
+							<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+								<TR>
+								<TD VALIGN="MIDDLE" WIDTH="28px"><img id="img_srch" src="data/pause.gif" title="Progress indicator: refining the search term" alt="progress indicator" width="20" height="20"/>
+								<TD VALIGN="MIDDLE" STYLE="padding-right:5px;">refining search term
+								<TD VALIGN="MIDDLE" WIDTH="60%"><div id="progressbar_srch" style="font-size:62.5%; width: 60%;"></div>
+								<TR>
+								<TD VALIGN="MIDDLE" WIDTH="28px"><img id="img_mtch" src="data/pause.gif" title="Progress indicator: word matching process" alt="progress indicator" width="20" height="20"/>
+								<TD VALIGN="MIDDLE" STYLE="padding-right:5px;">matching words
+								<TD VALIGN="MIDDLE" WIDTH="60%"><div id="progressbar_mtch" style="font-size:62.5%; width: 60%;"></div>
+								<TR>
+								<TD VALIGN="MIDDLE" WIDTH="28px"><img id="img_oput" src="data/pause.gif" title="Progress indicator: presenting information" alt="progress indicator" width="20" height="20"/>
+								<TD VALIGN="MIDDLE" STYLE="padding-right:5px;">presenting information
+								<TD VALIGN="MIDDLE" WIDTH="60%"><div id="progressbar_oput" style="font-size:62.5%; width: 60%;"></div>
+							</TABLE>
+						</div>
+					</FONT>
+				</div>
+	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
+</div>
+<!-- end of main page content -->
+<!-- div section containing the entire page footer, including spacing, web trends, etc -->
+				<div id="entirefoot">
+					<div xmlns:esi="http://www.edge-delivery.org/esi/1.0" id="crowncopyright">Content�from the Office for National Statistics.<br/>� Crown Copyright applies unless otherwise stated.</div>
+					<!-- in case user does not have JS enabled -->
+					<noscript>
+						<div>
+							<img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="" />
+							Your internet browser must have JavaScript enabled to view this content and use this functionality.
+						</div>
+					</noscript>
+					<!-- end -->
+				</div>
+<!-- end of footer div section -->
+			</form>
+		</div>
+<!-- end of main div -->
+	</div>
+<!-- end of wrap div -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56892037-19', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

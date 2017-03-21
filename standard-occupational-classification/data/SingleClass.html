@@ -1,0 +1,251 @@
+<html lang="en" xmlns:esi="http://www.edge-delivery.org/esi/1.0" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Robots" content="index,follow" />
+<meta name="DC.Coverage" content="UK" />
+<meta name="DC.Creator" content="ONS" />
+<meta name="DC.Language" content="eng" scheme="ISO 639-2/T" />
+<meta name="eGMS.Accessibility" content=".No Conformance" scheme="eGMS.WCAG10" />
+<meta name="DC.Title" content="ONS SOC specific unit/minor/major group" />
+<meta name="DCTERMS.alternative" content="" />
+<meta name="DC.subject" content="" />
+<meta name="DC.Description" content="ONS SOC specific unit/minor/major group" />
+<meta name="DC.Source" content="Office for National Statistics" />
+<meta name="DC.Identifier" content="" scheme="eGMS.ISSN" />
+<meta name="eGMS.updatingFrequency" content="" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+<title>ONS SOC specific unit/minor/major group details</title>
+
+<script type="text/javascript" src="socDB.js"></script>
+<script type="text/javascript" src="js/soc_support_js.js"></script>
+
+<script type="text/javascript">
+	// assuming this page was called with a code to display, identify said code
+	myclass = 0; previous = 0;
+	GETvars = window.location.search.replace("?","").split("&");
+	for (i=0;i<GETvars.length;i++) {
+		xVAR = GETvars[i].split("=");
+		if(xVAR[1]) {
+			switch (xVAR[0].toLowerCase()) {
+				case "soc": myclass = xVAR[1]; break;
+				case "from": previous = xVAR[1]; break;
+			};
+		};
+	};
+	// define the type of code parsed
+	SOCtype = "";
+	if (myclass > 0 && myclass <= 9) { SOCtype="Major Group"; };
+	if (myclass > 9 && myclass <= 99) { SOCtype="Sub-Major Group"; };
+	if (myclass > 99 && myclass <= 999) { SOCtype="Minor Group"; };
+	if (myclass > 999) { SOCtype="Unit Group"; };
+	if (myclass == 10 || myclass == 20 || myclass == 30 || myclass == 40 || myclass == 50 || myclass == 60 || myclass == 70 || myclass == 80 || myclass == 90) { SOCtype="Pseudo-code"; };
+</script>
+
+<style type="text/css"><!--
+html, body {
+	height: 100%;
+	background-color: #EFEFEF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+}
+#wrap { min-height: 100%; }
+#main { height: 100%; }
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+a { color:#005582; text-decoration:none; }
+a:hover { color:#000000; text-decoration:underline; }
+a:visited { color:#551A8B; text-decoration:none; }
+
+#maincontent {
+	margin: 0px; margin-bottom: 5px;
+}
+#wrapper{/* enforces left and right page border */
+ background-color: #EFEFEF;
+ padding: 0px 18px 0px 6px;
+}
+
+#ons-style-border{ padding: 3px 9px 3px 10px; }
+#ons-style-box{
+	border: 1px solid #D9E1E5;
+	float: left;
+	background-color: #ffffff;
+	color: #383838;
+	width: 100%;
+	padding: 6px 6px 6px 8px;
+	margin-bottom: 3px;
+	}
+--></style>
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+<!--[if lt IE 9 ]>
+	<style type="text/css">
+	#wrapper{/* enforces left and right page border */
+	background-color: #EFEFEF;
+	padding: 0% 1.5% 0% 1%;
+	}
+	#ons-style-border{ padding: 0% 0% 0% 1%; }
+	#ons-style-box{
+	border: 1px solid #D9E1E5;
+	float: left;
+	background-color: #ffffff;
+	color: #383838;
+	width: 95%;
+	padding: 0.5% 1% 0.5% 1%;
+	margin-bottom: 3px;
+	}
+	</style>
+<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<div id="main">
+<!-- start of main page content -->
+				<div id="maincontent">
+<div id="wrapper">
+<!-- the start of the JavaScript to handle displaying the actual information -->
+	<script>
+// if there is actually information associated with the parsed code...
+//   display it, otherwise highlight there is a problem
+	document.write("<div id=\"ons-style-border\" style=\"padding-top: 9px;\"> <div id=\"ons-style-box\">");
+	if (!socDB[myclass]) {
+		document.write("	<FONT STYLE=\"font-size:100%;\">There has been a problem with your request: the SOC you tried to display does not exist.<BR>Please return to the previous page and try again.</FONT>");
+	} else {
+		document.write("	<FONT STYLE=\"font-size:112.5%;\"><B><FONT COLOR=\"#0000FF\">"+myclass+":</FONT></B> "+socDB[myclass].unit+"</FONT>");
+	};
+	document.write("</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+
+	// assuming there is a description for this code, display it
+	if (socDB[myclass].desc) {
+		document.write("<!-- start the second white box of information -->");
+		document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+		document.write("<B>Job description:</B><BR>" + replace_refs(socDB[myclass].desc));
+		document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+
+	// assuming there are entry requirements for this job, display them
+	if (socDB[myclass].entry) {
+		document.write("<!-- start the first white box of information -->");
+		document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+		document.write("<B>Entry requirements of this job:</B><BR>" + replace_refs(socDB[myclass].entry));
+		document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+
+	// assuming there are tasks related to this code, display them
+	if (socDB[myclass].tasks) {
+		document.write("<!-- start the second white box of information -->");
+		document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+		document.write("<B>Tasks required by this job include:</B><UL STYLE=\"display: inline;\">");
+		for (i=0;i<socDB[myclass].tasks.length;i++) {
+			if (socDB[myclass].tasks[i] != "") { document.write("<BR><LI STYLE=\"margin-left: 20px;\">"+replace_refs(socDB[myclass].tasks[i])); };
+		};
+		document.write("</UL>\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+
+	// if it was a minor group, display its basic operational category & analytic class
+	if (myclass > 999) {
+		document.write("<!-- start a white box of information -->");
+		document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+		document.write("<B>NS-SEC categorisations:</B>");
+		document.write("<BR>The simplified NS-SEC analytic class for this code is "+socDB[myclass].ancls[0]);
+		document.write("<BR>The simplified NS-SEC operational category for this code is "+socDB[myclass].opcat[0]);
+		document.write("<BR>To find your exact NS-SEC code, please use the <A HREF=\"../ONS_NSSEC_discovery_tool.html?soc="+myclass+"\" TARGET=\"_blank\" TITLE=\"Link to the NS-SEC Coding Tool\">NS-SEC Coding Tool</A>.");
+		document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+
+	// assuming there are related job titles, display them
+	if (socDB[myclass].related) {
+		document.write("<!-- start the third white box of information -->");
+		document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+		document.write("<B>Jobs related to this code:</B><UL STYLE=\"display: inline;\">");
+		for (i=0;i<socDB[myclass].related.length;i++) {
+			if (socDB[myclass].related[i] != "") { document.write("<BR><LI STYLE=\"margin-left: 20px;\">"+replace_refs(socDB[myclass].related[i])); };
+		};
+		document.write("</UL>\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+
+	// assuming there are features to exclude, display them
+	if (socDB[myclass].excludes) {
+		document.write("<!-- start the fourth white box of information -->");
+		document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+		document.write("<B>This "+SOCtype.toLowerCase()+" excludes:</B><UL STYLE=\"display: inline;\">");
+		for (i=0;i<socDB[myclass].excludes.length;i++) {
+			document.write("<BR><LI STYLE=\"margin-left: 20px;\">"+replace_refs(socDB[myclass].excludes[i]));
+		};
+		document.write("</UL>\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+
+	// if this was lower down the hierarchy than a Major Group, display its hierarchy
+	// have had to add in a qualifier to make sure it does not display the special pseudo SOC codes
+	lvl = 10;
+	if (myclass > 9 && myclass != 10 && myclass != 20 && myclass != 30 && myclass != 40 && myclass != 50 && myclass != 60 && myclass != 70 && myclass != 80 && myclass != 90) {
+		document.write("<!-- start the fifth white box of information -->");
+		document.write("<div id=\"ons-style-border\" style=\"padding-bottom: 9px;\"> <div id=\"ons-style-box\">");
+		document.write("<B>This "+SOCtype.toLowerCase()+" is part of:</B><UL STYLE=\"display: inline;\">");
+		if (myclass > 999) {
+			document.write("<LI STYLE=\"margin-left: 20px;\">Minor Group <A HREF=\"SingleClass.html?soc="+Math.floor(myclass/lvl)+"&from="+myclass+"\">"+Math.floor(myclass/lvl)+": "+socDB[Math.floor(myclass/lvl)].unit+"</A>");
+			lvl = lvl * 10;
+		};
+		if (myclass > 99) {
+			document.write("<LI STYLE=\"margin-left: 20px;\">Sub-Major Group <A HREF=\"SingleClass.html?soc="+Math.floor(myclass/lvl)+"&from="+myclass+"\">"+Math.floor(myclass/lvl)+": "+socDB[Math.floor(myclass/lvl)].unit+"</A>");
+			lvl = lvl * 10;
+		};
+		document.write("<LI STYLE=\"margin-left: 20px;\">Major Group <A HREF=\"SingleClass.html?soc="+Math.floor(myclass/lvl)+"&from="+myclass+"\">"+Math.floor(myclass/lvl)+": "+socDB[Math.floor(myclass/lvl)].unit+"</A>");
+		document.write("</UL>\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+
+	// if this was further up the hierarchy than a Unit Group, display its subcomponents
+	// have had to add in a qualifier to make sure it does not display the special pseudo SOC codes
+	if (myclass <= 999 && myclass != 10 && myclass != 20 && myclass != 30 && myclass != 40 && myclass != 50 && myclass != 60 && myclass != 70 && myclass != 80 && myclass != 90) {
+		document.write("<!-- start the sixth white box of information -->");
+		document.write("<div id=\"ons-style-border\" style=\"padding-bottom: 9px;\"> <div id=\"ons-style-box\">");
+		document.write("<B>Subcomponents of this "+SOCtype.toLowerCase()+" include:</B><UL STYLE=\"display: inline;\">");
+		for (i=0;i<=9;i++) {
+			thisclass = ((myclass*10)+i);
+			// have had to add in a qualifier to make sure it does not display the special pseudo SOC codes
+			if (thisclass != 10 && thisclass != 20 && thisclass != 30 && thisclass != 40 && thisclass != 50 && thisclass != 60 && thisclass != 70 && thisclass != 80 && thisclass != 90) {
+				if (socDB[thisclass]) {
+					document.write("<LI STYLE=\"margin-left: 20px;\"><A HREF=\"SingleClass.html?soc="+thisclass+"&from="+myclass+"\">"+thisclass+": "+socDB[thisclass].unit+"</A>");
+				};
+			};
+		};
+		document.write("</UL>\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+
+	// force a back button into the system
+	if (previous != 0) {
+		document.write("<!-- start the final white box of information -->");
+		document.write("<div id=\"ons-style-border\" style=\"padding-bottom: 9px;\"> <div id=\"ons-style-box\">");
+		document.write("<A HREF=\"SingleClass.html?soc="+previous+"&from="+myclass+"\">click here to return to code "+previous+"</A>");
+		document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+	};
+	</script>
+</div>
+<!-- end of main page content -->
+
+<!-- in case user does not have JS enabled -->
+<noscript>
+	<div>
+		<img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="" />
+		Your internet browser must have JavaScript enabled to view this content and use this functionality.
+	</div>
+</noscript>
+<!-- end -->
+
+				</div>
+<!-- end of footer div section -->
+		</div>
+<!-- end of main div -->
+	</div>
+<!-- end of wrap div -->
+</body>
+</html>

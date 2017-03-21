@@ -1,0 +1,361 @@
+<html lang="en" xmlns:esi="http://www.edge-delivery.org/esi/1.0" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Robots" content="index,follow" />
+<meta name="DC.Coverage" content="UK" />
+<meta name="DC.Creator" content="ONS" />
+<meta name="DC.Language" content="eng" scheme="ISO 639-2/T" />
+<meta name="eGMS.Accessibility" content=".No Conformance" scheme="eGMS.WCAG10" />
+<meta name="DC.Title" content="ONS SOC specific unit/minor/major group" />
+<meta name="DCTERMS.alternative" content="" />
+<meta name="DC.subject" content="" />
+<meta name="DC.Description" content="ONS SOC specific unit/minor/major group" />
+<meta name="DC.Source" content="Office for National Statistics" />
+<meta name="DC.Identifier" content="" scheme="eGMS.ISSN" />
+<meta name="eGMS.updatingFrequency" content="" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+<title>ONS SOC specific unit/minor/major group details</title>
+
+<script type="text/javascript" src="socDB.js"></script>
+<script type="text/javascript" src="NSSECdb.js"></script>
+
+<script type="text/javascript">
+	specialclass="";
+	function fullreset() {
+		myclass = 0;
+		Estat = 0;
+		SEmanager = 0;
+		SEsize = 0;
+		EEresponsible = 0;
+		EEsize = 0;
+	};
+	fullreset();
+
+	// assuming this page was called with a code to display, identify said code
+	GETvars = window.location.search.replace("?","").split("&");
+	for (i=0;i<GETvars.length;i++) {
+		xVAR = GETvars[i].split("="); if(xVAR[1]) {
+			switch (xVAR[0].toLowerCase()) {
+				case "newsoc": specialclass = xVAR[1]; break;
+				case "soc": myclass = xVAR[1]; break;
+				case "estat": Estat = xVAR[1]; break;
+				case "semanager": SEmanager = xVAR[1]; break;
+				case "sesize": SEsize = xVAR[1]; break;
+				case "eeresponsible": EEresponsible = xVAR[1]; break;
+				case "eesize": EEsize = xVAR[1]; break;
+			};
+		};
+	};
+
+	SECcode = 0;
+	SECreduced = 0;
+	if (socDB[myclass] && Estat == 2 && SEmanager == 1) { SECcode = 3; };
+	if (socDB[myclass] && Estat == 2 && SEmanager == -1) { SECcode = -1; };
+	if (socDB[myclass] && Estat == 2 && SEmanager == 2 && SEsize == 1) { SECcode = 2; };
+	if (socDB[myclass] && Estat == 2 && SEmanager == 2 && SEsize == 2) { SECcode = 1; };
+	if (socDB[myclass] && Estat == 2 && SEmanager == 2 && SEsize == 3) { SECcode = 1; };
+	if (socDB[myclass] && Estat == 2 && SEmanager == 2 && SEsize == -1) { SECcode = 1; SECreduced = 1; };
+	if (socDB[myclass] && Estat == -1) { SECcode = -1; };
+	if (socDB[myclass] && Estat == 1 && myclass >= 1115 && myclass <= 1259 && EEsize == 1) { SECcode = 5; };
+	if (socDB[myclass] && Estat == 1 && myclass >= 1115 && myclass <= 1259 && EEsize == 2) { SECcode = 4; };
+	if (socDB[myclass] && Estat == 1 && myclass >= 1115 && myclass <= 1259 && EEsize == 3) { SECcode = 4; };
+	if (socDB[myclass] && Estat == 1 && myclass >= 1115 && myclass <= 1259 && EEsize == -1) { SECcode = 3; SECreduced = 1; };
+	if (socDB[myclass] && Estat == 1 && EEresponsible == 1) { SECcode = 6; };
+	if (socDB[myclass] && Estat == 1 && EEresponsible == 2) { SECcode = 7; };
+	if (socDB[myclass] && Estat == 1 && EEresponsible == -1) { SECcode = -1; };
+	if (myclass == 10 || myclass == 20 || myclass == 30 || myclass == 40 || myclass == 50 || myclass == 60 || myclass == 70 || myclass == 80 || myclass == 90) { SECcode = -1; };
+
+	function parse_NSSEC(q_no,myval) {
+		if (q_no == 0 && myval == -1) { myclass = -1; };
+		if (q_no == 0 && myval != -1) { myclass = myval; };
+		if (q_no == 1) { Estat = myval; };
+		if (q_no == 2) { SEmanager = myval; };
+		if (q_no == 3) { SEsize = myval; };
+		if (q_no == 4) { EEresponsible = myval; };
+		if (q_no == 5) { EEsize = myval; };
+		window.location.replace("NSSECquestion.html?soc="+myclass+"&Estat="+Estat+"&SEmanager="+SEmanager+"&SEsize="+SEsize+"&EEresponsible="+EEresponsible+"&EEsize="+EEsize);
+	};
+
+	function confirmterm() {
+		start_term = document.nssec_form.soc_code.value.replace(/(\r\n|\n|\r)/gm,"").replace(/(\t)/gm,"");
+		if (start_term.charAt(0) == "0") {
+			do { start_term = start_term.substr(1,start_term.length-1); } while (start_term.charAt(0) == "0");
+		};
+		specificcode = start_term.replace(/[^0-9]+/g,'');
+		if (start_term == specificcode && specificcode > 0 && specificcode < 10000) {
+			if (!socDB[specificcode]) {
+				alert("The code you entered was not recognised by the database. Perhaps you typed a digit incorrectly. Please try again.");
+				myclass = 0; document.nssec_form.soc_code.focus();
+			} else {
+				parse_NSSEC(0,specificcode);
+			};
+		} else {
+			alert("The SOC code you entered is not a value code - it should be a numeric code of upto four digits - please try again");
+			myclass = 0; document.nssec_form.soc_code.focus();
+		};
+	};
+	
+	function togglemethods() {
+		if (document.getElementById("themethods").style.display == "none") {
+			document.getElementById("themethods").style.display = "block";
+		} else {
+			document.getElementById("themethods").style.display = "none";
+		};
+	};
+
+	function disableEnterKey(e) {
+		var key;
+		if(window.event) {
+			key = window.event.keyCode; // for IE
+		} else {
+			key = e.which; // for FF
+		};
+		if(key==13) {
+			confirmterm(); return false;
+		} else { return true; };
+	};
+</script>
+
+<style type="text/css"><!--
+html, body {
+	height: 100%;
+	background-color: #EFEFEF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+}
+#wrap { min-height: 100%; }
+#main { height: 100%; }
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+a { color:#005582; text-decoration:none; }
+a:hover { color:#000000; text-decoration:underline; }
+a:visited { color:#551A8B; text-decoration:none; }
+.NSSECbutton {
+	border: 0;
+	margin: 3px 0 0 0;
+	padding: 0 0 0 0;
+	color: #003D59;
+	background-color: #B7C846;
+	background-image: url(button_back.png);
+	height: 22px;
+	width: 140px;
+	font-size: 90%;
+	font-weight: bold;
+	cursor: pointer;
+	}
+.NSSECthinbutton {
+	border: 0;
+	margin: 3px 0 0 0;
+	padding: 0 0 0 0;
+	color: #003D59;
+	background-color: #B7C846;
+	background-image: url(button_thin.png);
+	height: 22px;
+	width: 100px;
+	font-size: 90%;
+	font-weight: bold;
+	cursor: pointer;
+	}
+
+#maincontent {
+	margin: 0px; margin-bottom: 5px;
+}
+#wrapper{/* enforces left and right page border */
+ background-color: #EFEFEF;
+ padding: 0px 18px 0px 6px;
+}
+
+#ons-style-border{ padding: 3px 9px 3px 10px; }
+#ons-style-box{
+	border: 1px solid #D9E1E5;
+	float: left;
+	background-color: #ffffff;
+	color: #383838;
+	width: 100%;
+	padding: 6px 6px 6px 8px;
+	margin-bottom: 3px;
+	}
+--></style>
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+<!--[if lt IE 9 ]>
+	<style type="text/css">
+	#wrapper{/* enforces left and right page border */
+	background-color: #EFEFEF;
+	padding: 0% 1.5% 0% 1%;
+	}
+	#ons-style-border{ padding: 0% 0% 0% 1%; }
+	#ons-style-box{
+	border: 1px solid #D9E1E5;
+	float: left;
+	background-color: #ffffff;
+	color: #383838;
+	width: 95%;
+	padding: 0.5% 1% 0.5% 1%;
+	margin-bottom: 3px;
+	}
+	</style>
+<![endif]-->
+</head>
+<body onload="if(document.nssec_form.soc_code){document.nssec_form.soc_code.focus();document.nssec_form.soc_code.value=specialclass;};">
+	<div id="wrap">
+		<div id="main">
+			<form ID="nssec_form" NAME="nssec_form" ACTION="#" METHOD=GET>
+<!-- start of main page content -->
+				<div id="maincontent">
+<div id="wrapper">
+<!-- the start of the JavaScript to handle displaying the actual information -->
+	<div id="ons-style-border" style="padding-top: 9px;"> <div id="ons-style-box">
+		<FONT STYLE="font-size:112.5%;"><B>Discover your NS-SEC code</B></FONT>
+	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
+
+	<script>
+		if (myclass == 0 || !socDB[myclass]) {
+			document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+			document.write("Use this system to find the National Statistics Socio-economic Classification (NS-SEC) code relating to your Standard Occupational Classification (SOC) code.");
+			document.write("<BR><BR>In order to derive NS-SEC you will be asked a maximum of 3 questions. These questions will ask about your employment status and, dependant on your answers, also size of organisation and supervisor status. None of your answers are stored on any databases nor sent anywhere.");
+			document.write("<BR><BR>This tool will use either the full, reduced, or simplified method to determine your NS-SEC code dependent upon your answers. For further information on the different derivation methods, analytic classes and operational categories, please refer to the <A HREF=\"http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/soc2010-volume-3-ns-sec--rebased-on-soc2010--user-manual/index.html\" TARGET=\"_blank\">NS-SEC user manual</A>.");
+			document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+
+			document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+			document.write("<B>Type your four-digit SOC unit code into this box:</B> <INPUT TYPE=\"TEXTBOX\" NAME=\"soc_code\" VALUE=\"\" style=\"width: 40px;\" onKeyPress=\"return disableEnterKey(event);\"/>&nbsp;<INPUT ID=\"soc_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"go to next step\" onclick=\"confirmterm();\" />");
+			document.write("<BR><BR>If you do not know your SOC 2010 code, you can find it using either the <A HREF=\"../ONS_SOC_occupation_coding_tool.html\" TARGET=\"_blank\" TITLE=\"Link to the SOC 2010 Occupation Coding Tool\">Occupation Coding Tool</A> or the <A HREF=\"../ONS_SOC_hierarchy_view.html\" TARGET=\"_blank\" TITLE=\"Link to the SOC 2010 Hierarchy viewing tool\">SOC 2010 Hierarchy</A>.");
+			document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+		};
+		if (myclass != 0 && socDB[myclass]) {
+			document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+			document.write("Your selected SOC unit group: <B>"+myclass+"</B> ("+socDB[myclass].unit+")");
+			if (Estat == 1) { document.write("<BR>Your employment status: <B>employee</B>"); };
+			if (Estat == 2) { document.write("<BR>Your employment status: <B>self-employed"+(SEmanager==-1?" with an unknown number of employees":"")+(SEmanager==1?" with no employees":"")+(SEmanager==2?" with employees":"")+"</B>"); };
+			if (EEsize == -1) { document.write("<BR>Number of employees in your workplace: <B>not known</B>"); };
+			if (EEsize == 1 || SEsize == 1) { document.write("<BR>Number of employees in your workplace: <B>1-24</B>"); };
+			if (EEsize == 2 || SEsize == 2) { document.write("<BR>Number of employees in your workplace: <B>25-499</B>"); };
+			if (EEsize == 3 || SEsize == 3) { document.write("<BR>Number of employees in your workplace: <B>500+</B>"); };
+			if (EEresponsible > 0) { document.write("<BR>You <B>are"+(EEresponsible==2?" not":"")+"</B> responsible for supervising work of other staff"); };
+			if (EEresponsible == -1) { document.write("<BR>It is <B>unknown</B> whether you are responsible for supervising work of other staff"); };
+			document.write("</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+
+			if (SECcode != 0) {
+					document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+					if (SECcode == -1) {
+						// basic 1-to-1 match
+						oc = socDB[myclass].opcat[0];
+						ac = socDB[myclass].ancls[0];
+						document.write("Not enough information is known, so we must use the <SPAN STYLE=\"color:#005582; text-decoration:underline; cursor: pointer;\" TITLE=\"Explanation of the NS-SEC derivation methods\" onclick=\"togglemethods();\"><B>simplified</B> method</SPAN>.<BR>");
+					} else {
+						if (SECreduced == 0) {
+							// the normal method
+							oc = socDB[myclass].opcat[SECcode];
+							ac = socDB[myclass].ancls[SECcode];
+							document.write("With all details provided, the <SPAN STYLE=\"color:#005582; text-decoration:underline; cursor: pointer;\" TITLE=\"Explanation of the NS-SEC derivation methods\" onclick=\"togglemethods();\"><B>full</B> derivation method</SPAN> has been used.<BR>");
+						} else {
+							// the reduced method
+							oc = socDB[myclass].redoc[SECcode];
+							ac = socDB[myclass].redac[SECcode];
+							document.write("With a missing detail we must use the <SPAN STYLE=\"color:#005582; text-decoration:underline; cursor: pointer;\" TITLE=\"Explanation of the NS-SEC derivation methods\" onclick=\"togglemethods();\"><B>reduced</B> derivation method</SPAN>.<BR>");
+						};
+					};
+
+					// hidden box explaining the possible methods being employed
+					document.write("<SPAN id=\"themethods\" STYLE=\"margin: 10px; padding: 3px; border: 1px solid #D9E1E5; background: #E5E5E5; display: none;\">");
+					document.write("<B>An explanation of the Derivation Methods</B><BR><BR>Derivation methods are the processes by which NS-SEC is calculated using information supplied by respondents. There are 3 available derivation methods to enable the coding of NS-SEC. These are the full, reduced, and simplified methods.<BR><BR>");
+					document.write("<B>The Full Method</B><BR><BR>In order to derive NS-SEC using the Full Method, the required information is: SOC2010 unit group, employment status, and size of organisation. The full method achieves the best quality derivation by using all three items of information.<BR><BR>");
+					document.write("<B>The Reduced Method</B><BR><BR>In order to derive NS-SEC using the Reduced Method, the required information information is: SOC2010 unit group and employment status. The Reduced Method is used when size of organisation information is not available.<BR><BR>");
+					document.write("<B>The Simplified Method</B><BR><BR>In order to derive NS-SEC using the Simplified Method, the required information information is: SOC2010 unit group. The Simplified Method is used when only the SOC 2010 code is available.<BR><BR>");
+					document.write("For further information about derivation methods and how they function, and quality information, please see the <A HREF=\"http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/soc2010-volume-3-ns-sec--rebased-on-soc2010--user-manual/index.html\" TARGET=\"_blank\" TITLE=\"Link to the NS-SEC user manual\">NS-SEC user manual</A>.<BR><BR>");
+					document.write("<SPAN STYLE=\"color:#005582; text-decoration:underline; cursor: pointer;\" TITLE=\"Click to close the explanation of the NS-SEC derivation methods\" onclick=\"togglemethods();\">Click to close this section</SPAN>");
+					document.write("</SPAN>");
+
+					document.write("<BR>Your <B>analytic class</B> is <B>" + (ac==0?"*":ac) + "</B> which is &#34;" + AnCls[ac].desc + "&#34;.<BR>");
+					document.write("<BR>Your <B>operational category</B> is <B>" + oc + "</B> which is &#34;" + OpCat[oc].name + "&#34; and is described as:<BR><BR><TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0><TR><TD WIDTH=24><TD>&#34;" + OpCat[oc].desc + "&#34;<TD WIDTH=24></TR></TABLE>");
+					document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+					document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">you can click <INPUT ID=\"reset_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\" VALUE=\"start again\" onclick=\"fullreset(); parse_NSSEC(0,0);\" /> if you want to start again\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+			} else {
+				if (Estat == 0) {
+					// generic first question: basic employment status
+					document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+					document.write("<B>Question:</B> Were you working as an employee or were you self-employed?<BR><BR>");
+					document.write("<B>Select your answer:</B><BR><INPUT ID=\"EE_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"Employee\" onclick=\"parse_NSSEC(1,1);\" />");
+					document.write("&nbsp;<INPUT ID=\"SE_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"Self-employed\" onclick=\"parse_NSSEC(1,2);\" />");
+					document.write("&nbsp;<INPUT ID=\"NK_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"Not known\" onclick=\"parse_NSSEC(1,-1);\" />");
+					document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+					document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">you can click <INPUT ID=\"return_button\" TYPE=\"BUTTON\" CLASS=\"NSSECthinbutton\" VALUE=\"back\" onclick=\"parse_NSSEC(0,0);\" /> if you want to change your last answer<BR>you can click <INPUT ID=\"reset_button\" TYPE=\"BUTTON\" CLASS=\"NSSECthinbutton\" VALUE=\"start again\" onclick=\"fullreset(); parse_NSSEC(0,-1);\" /> if you want to start again\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+				};
+				if (Estat == 2 && SEmanager == 0) {
+					// self-employed first question
+					document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+					document.write("<B>Question:</B> Were you working on your own or did you have employees?<BR><BR>");
+					document.write("<B>Select your answer:</B><BR><INPUT ID=\"SE_own_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"On own\" onclick=\"parse_NSSEC(2,1);\" />");
+					document.write("&nbsp;<INPUT ID=\"SE_emp_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"Employees\" onclick=\"parse_NSSEC(2,2);\" />");
+					document.write("&nbsp;<INPUT ID=\"SE_not_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"Not known\" onclick=\"parse_NSSEC(2,-1);\" />");
+					document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+					document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">you can click <INPUT ID=\"return_button\" TYPE=\"BUTTON\" CLASS=\"NSSECthinbutton\" VALUE=\"back\" onclick=\"parse_NSSEC(1,0);\" /> if you want to change your last answer<BR>you can click <INPUT ID=\"reset_button\" TYPE=\"BUTTON\" CLASS=\"NSSECthinbutton\" VALUE=\"start again\" onclick=\"fullreset(); parse_NSSEC(0,-1);\" /> if you want to start again\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+				};
+				if (Estat == 2 && SEmanager == 2 && SEsize == 0) {
+					// self-employed 'if you have employees' question
+					document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+					document.write("<B>Question:</B> How many people worked for your employer at the place where you worked?<BR><BR>");
+					document.write("<B>Select your answer:</B><BR><INPUT ID=\"SE_low_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"1-24\" onclick=\"parse_NSSEC(3,1);\" />");
+					document.write("&nbsp;<INPUT ID=\"SE_med_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"25-499\" onclick=\"parse_NSSEC(3,2);\" />");
+					document.write("&nbsp;<INPUT ID=\"SE_hih_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"500+\" onclick=\"parse_NSSEC(3,3);\" />");
+					document.write("&nbsp;<INPUT ID=\"SE_not_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"Not known\" onclick=\"parse_NSSEC(3,-1);\" />");
+					document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+					document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">you can click <INPUT ID=\"return_button\" TYPE=\"BUTTON\" CLASS=\"NSSECthinbutton\" VALUE=\"back\" onclick=\"parse_NSSEC(1,0);\" /> if you want to change your last answer<BR>you can click <INPUT ID=\"reset_button\" TYPE=\"BUTTON\" CLASS=\"NSSECthinbutton\" VALUE=\"start again\" onclick=\"fullreset(); parse_NSSEC(0,-1);\" /> if you want to start again\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+				};
+				if (Estat == 1) {
+					if (myclass < 1115 || myclass > 1259) {
+						// employee supervision question
+						document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+						document.write("<B>Question:</B> In your job, did you have formal responsibility for supervising the work of other employees?<BR><BR>");
+						document.write("<B>Select your answer:</B><BR><INPUT ID=\"EE_fmr1_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"Yes\" onclick=\"parse_NSSEC(4,1);\" />");
+						document.write("&nbsp;<INPUT ID=\"EE_fmr2_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"No\" onclick=\"parse_NSSEC(4,2);\" />");
+						document.write("&nbsp;<INPUT ID=\"EE_fmr3_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"Not known\" onclick=\"parse_NSSEC(4,-1);\" />");
+						document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+						document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">you can click <INPUT ID=\"return_button\" TYPE=\"BUTTON\" CLASS=\"NSSECthinbutton\" VALUE=\"back\" onclick=\"parse_NSSEC(1,0);\" /> if you want to change your last answer<BR>you can click <INPUT ID=\"reset_button\" TYPE=\"BUTTON\" CLASS=\"NSSECthinbutton\" VALUE=\"start again\" onclick=\"fullreset(); parse_NSSEC(0,-1);\" /> if you want to start again\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+					};
+					if (myclass >= 1115 && myclass <= 1259) {
+						// employee number of employees question
+						document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">");
+						document.write("<B>Question:</B> How many people worked for your employer at the place where you worked?<BR><BR>");
+						document.write("<B>Select your answer:</B><BR><INPUT ID=\"EE_low_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"1-24\" onclick=\"parse_NSSEC(5,1);\" />");
+						document.write("&nbsp;<INPUT ID=\"EE_med_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"25-499\" onclick=\"parse_NSSEC(5,2);\" />");
+						document.write("&nbsp;<INPUT ID=\"EE_hih_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"500+\" onclick=\"parse_NSSEC(5,3);\" />");
+						document.write("&nbsp;<INPUT ID=\"EE_not_button\" TYPE=\"BUTTON\" CLASS=\"NSSECbutton\"VALUE=\"Not known\" onclick=\"parse_NSSEC(5,-1);\" />");
+						document.write("\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+						document.write("<div id=\"ons-style-border\"> <div id=\"ons-style-box\">you can click <INPUT ID=\"return_button\" TYPE=\"BUTTON\" CLASS=\"NSSECthinbutton\" VALUE=\"back\" onclick=\"parse_NSSEC(1,0);\" /> if you want to change your last answer<BR>you can click <INPUT ID=\"reset_button\" TYPE=\"BUTTON\" CLASS=\"NSSECthinbutton\" VALUE=\"start again\" onclick=\"fullreset(); parse_NSSEC(0,-1);\" /> if you want to start again\n</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->");
+					};
+				};
+			};
+		};
+		</script>
+</div>
+<!-- end of main page content -->
+
+<!-- in case user does not have JS enabled -->
+<noscript>
+	<div>
+		<img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="" />
+		Your internet browser must have JavaScript enabled to view this content and use this functionality.
+	</div>
+</noscript>
+<!-- end -->
+
+				</div>
+<!-- end of footer div section -->
+			</form>
+		</div>
+<!-- end of main div -->
+	</div>
+<!-- end of wrap div -->
+</body>
+</html>
