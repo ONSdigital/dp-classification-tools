@@ -95,7 +95,7 @@ span.soc-class { color:#005582; text-decoration:underline; cursor: pointer; }
 	cursor: pointer;
 	}
 
-#logo { padding: 30px 0px 0px 28px; float: left; }
+#logo { padding: 0px 0px 7px 0px; float: left; }
 #logo img { border:none; }
 #crowncopyright{ display: none; }
 #wrapper{/* enforces left and right page border */
@@ -141,20 +141,22 @@ span.soc-class { color:#005582; text-decoration:underline; cursor: pointer; }
 <body>
 	<div id="wrap">
 		<div id="main">
-<!-- page banner -->
+<!-- page banner
 				<div id="banner" xmlns:esi="http://www.edge-delivery.org/esi/1.0">
 					<div id="logo"><A HREF="http://www.ons.gov.uk" TARGET="_self" TITLE="Link to The Office for National Statistics web-site"><img src="./data/logo.jpg" title="Office for National Statistics logo" alt="Office for National Statistics logo" width="50" height="50"  class="bannerimage"/></A></div>
 				</div>
-<!-- end of page banner -->
+ end of page banner -->
 <!-- start of main page content -->
 				<div id="maincontent">
-<!-- start the breadcrumb link trail -->
+<!-- start the breadcrumb link trail
 	<div style="padding: 10px 0px 6px 0px; border-bottom: 1px solid #CCCCCC; margin-bottom: 12px; float: left; background-color: #ffffff; color: #383838; font-size: 68.75%; width: 100%;">
 	<div style="padding: 0px 9px 0px 12px;">
 		You are here: <A HREF="http://www.ons.gov.uk/ons/index.html" TARGET="_self">Home</A> &gt; <A HREF="http://www.ons.gov.uk/ons/guide-method/index.html" TARGET="_self">Guidance and Methodology</A> &gt; <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/index.html" TARGET="_self">Current standard classifications</A> &gt; <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/index.html" TARGET="_self">Standard Occupational Classification 2010 (SOC2010)</A> &gt; <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/classifications-coding-tools/index.html" TARGET="_self">Classifications Coding Tools</A> &gt; NS-SEC Coding Tool
-	</div></div><!-- end of breadcrumb link trail -->
+	</div></div>end of breadcrumb link trail -->
 <div id="wrapper">
-
+	<div id="ons-style-border" xmlns:esi="http://www.edge-delivery.org/esi/1.0">
+		<div id="logo"><A HREF="http://www.ons.gov.uk" TARGET="_self" TITLE="Link to Office for National Statistics website"><img src="https://cdn.ons.gov.uk/assets/images/ons-logo.svg" title="Office for National Statistics logo" alt="Office for National Statistics logo" height ="60px" class="bannerimage"/></A></div>
+	</div>
 <!-- start the first white box of information -->
 	<div id="ons-style-border" style="padding-top: 7px;"> <div id="ons-style-box">
 		<h1>National Statistics Socio-economic Classification (NS-SEC) Coding Tool</h1>
@@ -164,7 +166,7 @@ span.soc-class { color:#005582; text-decoration:underline; cursor: pointer; }
 					<h2>What is this?</h2>
 					<FONT STYLE="font-size: 80%;">
 <BR><BR>This National Statistics Socio-economic Classification (NS-SEC) Coding Tool has been developed to assist users with the correct coding of NS-SEC.
-NS-SEC is a measure of employment relations and conditions of occupations. These are central to showing the structure of socio-economic positions in modern societies and helping to explain variations in social behaviour and other social phenomena.  For more information on NS-SEC please <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/soc2010-volume-3-ns-sec--rebased-on-soc2010--user-manual/index.html">click here</A>, and if you require any assistance coding NS-SEC please contact the <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/contact-soc2010/index.html">Occupation and Social Classifications Helpdesk</A>.
+NS-SEC is a measure of employment relations and conditions of occupations. These are central to showing the structure of socio-economic positions in modern societies and helping to explain variations in social behaviour and other social phenomena.  For more information on NS-SEC please <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/soc2010-volume-3-ns-sec--rebased-on-soc2010--user-manual/index.html">click here</A>, and if you require any assistance coding NS-SEC please contact the <A HREF="https://www.ons.gov.uk/methodology/classificationsandstandards/standardoccupationalclassificationsoc/soc2010">Occupation and Social Classifications Helpdesk</A>.
 					</FONT>
 	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
 <!-- start the third white box of information -->
@@ -173,7 +175,7 @@ NS-SEC is a measure of employment relations and conditions of occupations. These
 <B>To begin discovering your NS-SEC code, please click this button:</B> <INPUT TYPE="BUTTON" CLASS="SOCbutton" VALUE="Start NS-SEC tool" onclick="openquestion();" />
 <BR><BR>If you do not know your SOC 2010 code it can found using <A HREF="ONS_SOC_occupation_coding_tool.html" TARGET="_self" TITLE="Link to the SOC 2010 Occupation Coding Tool">Occupation Coding Tool</A> or <A HREF="ONS_SOC_hierarchy_view.html" TARGET="_self" TITLE="Link to the SOC 2010 Hierarchy viewing tool">SOC 2010 Hierarchy</A>:
 <BR><BR>In order to derive NS-SEC you will be asked a maximum of 3 questions. These questions will ask about your employment status and dependent on your answers also size of organisation and supervisor status. None of your answers are stored on any databases nor sent anywhere.
-<BR><BR>There are 3 methods to derive NS-SEC; these are the full, reduced, and simplified methods. The difference between these methods relates the information available to derive them. This NS-SEC Coding Tool will use the most appropriate methodology based on the information you provide. When you are presented with your NS-SEC information you will be presented with 2 pieces of information, an analytic class number, and an operational sub-category number. The operational sub-categories are subdivisions of the analytic class. For further information about the different derivation methods, analytic classes and operational categories, please refer to the <A HREF="http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/soc2010-volume-3-ns-sec--rebased-on-soc2010--user-manual/index.html" TARGET="_blank" TITLE="Link to the NS-SEC user manual">NS-SEC user manual</A>.
+<BR><BR>There are 3 methods to derive NS-SEC; these are the full, reduced, and simplified methods. The difference between these methods relates the information available to derive them. This NS-SEC Coding Tool will use the most appropriate methodology based on the information you provide. When you are presented with your NS-SEC information you will be presented with 2 pieces of information, an analytic class number, and an operational sub-category number. The operational sub-categories are subdivisions of the analytic class. For further information about the different derivation methods, analytic classes and operational categories, please refer to the <A HREF="https://www.ons.gov.uk/methodology/classificationsandstandards/standardoccupationalclassificationsoc/soc2010/soc2010volume3thenationalstatisticssocioeconomicclassificationnssecrebasedonsoc2010" TARGET="_blank" TITLE="Link to the NS-SEC user manual">NS-SEC user manual</A>.
 					</FONT>
 	</div><!-- end of ons-style-box --> </div><!-- ons-style-border -->
 </div>
