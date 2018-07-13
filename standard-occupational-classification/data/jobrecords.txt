@@ -70,6 +70,7 @@
 1121#Director, technical
 1121#Director, technical, engineering
 1121#Director, works, manufacturing
+1121#Head of manufacturing
 1121#Manager, abattoir
 1121#Manager, brewery
 1121#Manager, clothing, manufacturing
@@ -268,12 +269,15 @@
 1132#Director, technical, MARKETING
 1132#Director, TELEPHONE SALES
 1132#Head of business development
+1132#Head of commercial
 1132#Head of communications, MARKETING
+1132#Head of digital marketing
 1132#Head of marketing
 1132#Head of sales
 1132#Owner, export agency
 1132#Owner, import agency
 1133#Director of contracts, government
+1133#Director, chain, supply
 1133#Director, purchasing
 1133#Manager, bid
 1133#Manager, buying
@@ -294,6 +298,7 @@
 1134#Director, appeal
 1134#Director, appeals
 1134#Director, media
+1134#Director, media, social
 1134#Director, PUBLIC RELATIONS
 1134#Director, relations, public
 1134#Head of communications, PUBLIC RELATIONS
@@ -311,12 +316,13 @@
 1135#Director, recruitment
 1135#Director, resources, human
 1135#Director, training
+1135#Head of learning and development
 1135#Head of personnel
 1135#Manager, delivery, service, HR
 1135#Manager, development, employee
 1135#Manager, development, self
 1135#Manager, development, training
-1135#Manager, o and m
+1135#Manager, O&M
 1135#Manager, organisation and efficiency
 1135#Manager, organisation and methods
 1135#Manager, personnel
@@ -347,8 +353,14 @@
 1136#Director, technical, computer services
 1136#Director, technical, telecommunications
 1136#Director, telecommunications
+1136#Director, telecommunications services
 1136#Head of computer services
+1136#Head of ICT
+1136#Head of information security
 1136#Head of IT
+1136#Head of technology
+1136#Officer, information, chief
+1136#Officer, technical, chief
 1136#Owner, computer services
 1139#Clerk of the council
 1139#Clerk to the board, local government
@@ -366,6 +378,7 @@
 1139#Director of research and development
 1139#Director, accounts
 1139#Director, administration
+1139#Director, audit, internal
 1139#Director, charity
 1139#Director, cleaning
 1139#Director, conference organisers
@@ -381,6 +394,7 @@
 1139#Director, technical, research and development
 1139#Head of events
 1139#Head of intellectual property
+1139#Head of internal audit
 1139#Manager, branch, trade association
 1139#Manager, centre, mail, postal distribution services
 1139#Manager, CHARITABLE ORGANISATION
@@ -742,6 +756,7 @@
 1181#Manager, support, RADIOLOGY
 1181#Manager, vaccination
 1181#Superintendent, hospital service
+1184#Commissioner, social services
 1184#Director of social services
 1184#Manager, care, community
 1184#Manager, care, local government: social services
@@ -756,8 +771,8 @@
 1184#Manager, services, children's, social, welfare services
 1184#Manager, services, community
 1184#Manager, services, social
-1184#Manager, support, local government: social services:NON-RESIDENTIAL
-1184#Manager, unit, local government: social services:NON-RESIDENTIAL
+1184#Manager, support, local government social services, NON-RESIDENTIAL
+1184#Manager, unit, local government social services, NON-RESIDENTIAL
 1184#Manager, welfare services
 1184#Manager, work, social
 1184#Secretary, managing, welfare services
@@ -944,6 +959,7 @@
 1223#Manager, NAAFI: canteen
 1223#Manager, operations, catering
 1223#Manager, restaurant
+1223#Manager, retail, catering
 1223#Manager, service, food
 1223#Manager, services, catering
 1223#Manager, services, food
@@ -969,7 +985,7 @@
 1223#Owner, take-away food shop
 1223#Restaurateur
 1223#Retailer, take-away food shop
-1223#Shopkeeper, FISH AND CHIP
+1223#Shopkeeper, fish and chip
 1223#Shopkeeper, fish, fried
 1223#Shopkeeper, FRIED FISH
 1223#Shopkeeper, take-away food shop
@@ -1020,6 +1036,7 @@
 1225#Manager, casino
 1225#Manager, centre, arts
 1225#Manager, centre, bound, outward
+1225#Manager, centre, equestrian
 1225#Manager, centre, fitness
 1225#Manager, centre, leisure
 1225#Manager, centre, sports
@@ -1098,6 +1115,7 @@
 1226#Manager, agent, travel
 1226#Manager, information, tourist
 1226#Manager, operations, travel agents
+1226#Manager, retail, travel agents
 1226#Manager, shop, travel agents
 1226#Manager, tourist
 1226#Manager, tours
@@ -1140,8 +1158,8 @@
 1242#Manager, service, day
 1242#Manager, service, residential home
 1242#Manager, sheltered housing
-1242#Manager, support, local government: social services:RESIDENTIAL
-1242#Manager, unit, local government: social services:RESIDENTIAL
+1242#Manager, support, local government social services, RESIDENTIAL
+1242#Manager, unit, local government social services, RESIDENTIAL
 1242#Manager, unit, rehabilitation
 1242#Officer, principal, children's home
 1242#Officer, principal, old people's home
@@ -1164,6 +1182,7 @@
 1251#Factor, estate, SCOTLAND
 1251#Factor, housing, SCOTLAND
 1251#Head of facilities
+1251#Head of facilities management
 1251#Investor, property
 1251#Landlady, property management
 1251#Landlord, property
@@ -1394,6 +1413,7 @@
 1255#Owner, scrap merchants, breakers
 1255#Owner, yard, scrap
 1255#Totter
+1259#Director, architectural service
 1259#Director, children's nursery
 1259#Director, commission agents
 1259#Director, educational establishments
@@ -1429,6 +1449,7 @@
 1259#Manager, centre, training
 1259#Manager, Citizens Advice Bureau
 1259#Manager, club, out of school
+1259#Manager, club, school, after
 1259#Manager, crematorium
 1259#Manager, dating agency
 1259#Manager, design, graphic
@@ -1452,6 +1473,7 @@
 1259#Manager, laundry, launderette, dry cleaning
 1259#Manager, library
 1259#Manager, machinery hire
+1259#Manager, management consultancy
 1259#Manager, office, betting
 1259#Manager, office, bookmakers, turf accountants
 1259#Manager, operations, cleaning services
@@ -1476,6 +1498,7 @@
 1259#Manager, repairing: consumer goods
 1259#Manager, retail trade: video shop
 1259#Manager, retail, betting shop
+1259#Manager, retail, laundry, launderette, dry cleaning
 1259#Manager, rig
 1259#Manager, safe deposit
 1259#Manager, safety
@@ -1570,6 +1593,7 @@
 1259#Shopkeeper, laundry, launderette, dry cleaning
 1259#Shopkeeper, video shop
 1259#Superintendent, market
+2111#Analyst, chemical
 2111#Analyst, chief
 2111#Analyst, county
 2111#Analyst, public
@@ -1752,6 +1776,7 @@
 2112#Scientist, clinical
 2112#Scientist, forensic
 2112#Scientist, horticultural
+2112#Scientist, laboratory
 2112#Scientist, laboratory, medical
 2112#Scientist, marine
 2112#Scientist, MEDICAL
@@ -1871,6 +1896,7 @@
 2114#Associate, research, ECONOMIC
 2114#Associate, research, government
 2114#Associate, research, HISTORICAL
+2114#Consultant, GIS
 2114#Criminologist
 2114#Egyptologist
 2114#Epidemiologist
@@ -1919,6 +1945,7 @@
 2119#Officer, experimental, chief
 2119#Officer, experimental, senior
 2119#Officer, scientific
+2119#Officer, technical, LABORATORY
 2119#Researcher, postdoctoral
 2119#Researcher, university
 2119#Scientist
@@ -1956,7 +1983,7 @@
 2121#Engineer, drainage, PROFESSIONAL
 2121#Engineer, dredger, PROFESSIONAL
 2121#Engineer, drilling, mining
-2121#Engineer, field , oil wells
+2121#Engineer, field, oil wells
 2121#Engineer, fluids, drilling
 2121#Engineer, gas, natural
 2121#Engineer, geotechnical
@@ -2005,6 +2032,7 @@
 2121#Engineer, sustainability, building construction
 2121#Engineer, treatment, water, PROFESSIONAL
 2121#Engineer, tunnelling
+2121#Engineer, utilities, PROFESSIONAL
 2121#Engineer, water, PROFESSIONAL
 2121#Engineer, well
 2121#Engineer, works, public
@@ -2079,7 +2107,7 @@
 2122#Expert, salvage, marine
 2122#Hydrodynamicist
 2122#Inspector of fighting vehicles
-2122#Inspector, chief, engineering,PROFESSIONAL
+2122#Inspector, chief, engineering, PROFESSIONAL
 2122#Inspector, engineering, chief
 2122#Inspector, engineering, Jobcentre Plus
 2122#Officer, certifying, DETR
@@ -2124,7 +2152,7 @@
 2123#Engineer, second, electricity supplier
 2123#Engineer, second, power station
 2123#Engineer, shift, electricity supplier
-2123#Engineer, signal, railways:PROFESSIONAL
+2123#Engineer, signal, railways, PROFESSIONAL
 2123#Engineer, station, power, electricity supplier
 2123#Engineer, sub-area, electricity supplier
 2123#Engineer, sub-station, electricity supplier
@@ -2136,7 +2164,7 @@
 2123#Engineer, traction, electric
 2123#Engineer, transmission, power
 2123#Engineer-in-charge, electricity supplier
-2123#Inspector, chief, engineering,PROFESSIONAL, ELECTRICAL ENGINEERING
+2123#Inspector, chief, engineering, PROFESSIONAL, ELECTRICAL ENGINEERING
 2123#Officer, research, ENGINEERING, ELECTRICAL
 2123#Officer, scientific, ENGINEERING, ELECTRICAL
 2123#Researcher, ENGINEERING, ELECTRICAL
@@ -2179,7 +2207,7 @@
 2124#Engineer, telecommunications, PROFESSIONAL
 2124#Engineer, television, PROFESSIONAL
 2124#Engineer, transmission, power, TELEVISION
-2124#Inspector, chief, engineering,PROFESSIONAL, ELECTRONIC ENGINEERING
+2124#Inspector, chief, engineering, PROFESSIONAL, ELECTRONIC ENGINEERING
 2124#Officer, research, ENGINEERING, ELECTRONIC
 2124#Officer, scientific, ENGINEERING, ELECTRONIC
 2124#Researcher, ENGINEERING, ELECTRONIC
@@ -2419,6 +2447,7 @@
 2133#Manager, quality, COMPUTING
 2133#Manager, service, computer
 2133#Manager, service, COMPUTING
+2133#Manager, service, digital
 2133#Manager, service, IT
 2133#Manager, services, client, COMPUTING
 2133#Manager, services, computer
@@ -2437,6 +2466,7 @@
 2133#Manager, systems
 2133#Manager, systems, business
 2133#Manager, systems, information
+2133#Manager, systems, IT
 2133#Manager, team, COMPUTING
 2133#Manager, technical, computer
 2133#Manager, technical, COMPUTING
@@ -2450,6 +2480,7 @@
 2133#Manager, transmission, COMPUTING
 2133#Manager, UX, COMPUTING
 2133#Manager, validation, COMPUTING
+2133#Manager, visualisation, data
 2133#Manager, warehouse, data
 2134#Leader, project, software
 2134#Leader, project, software design
@@ -2462,14 +2493,18 @@
 2134#Manager, programme, telecommunications
 2134#Manager, project, COMPUTING
 2134#Manager, project, development, software
+2134#Manager, project, digital
 2134#Manager, project, IT
+2134#Manager, project, technical
 2134#Manager, project, telecommunications
 2134#Manager, projects, IT
 2134#Officer, projects, computer
 2134#Planner, IP
+2135#Accountant, systems
 2135#Adviser, systems
 2135#Analyst, business, COMPUTING
 2135#Analyst, business, IT
+2135#Analyst, business, technical
 2135#Analyst, comms, data
 2135#Analyst, comms, technical
 2135#Analyst, communications, data
@@ -2482,6 +2517,8 @@
 2135#Analyst, telecommunications
 2135#Analyst, voice, communications
 2135#Analyst, warehouse, data
+2135#Architect, chain, supply
+2135#Architect, cloud
 2135#Architect, COMPUTING
 2135#Architect, data
 2135#Architect, database
@@ -2494,6 +2531,8 @@
 2135#Architect, integration
 2135#Architect, IT
 2135#Architect, network
+2135#Architect, process
+2135#Architect, product
 2135#Architect, services, COMPUTING
 2135#Architect, solution
 2135#Architect, solution, customer
@@ -2504,6 +2543,7 @@
 2135#Architect, strategic
 2135#Architect, systems, COMPUTING
 2135#Architect, technical
+2135#Architect, technology, SAP
 2135#Architect, web
 2135#Consultant, ERP
 2135#Consultant, systems
@@ -2512,9 +2552,12 @@
 2135#Designer, computer
 2135#Designer, database
 2135#Designer, systems
+2135#Engineer, cloud
 2135#Engineer, computer, DESIGN
+2135#Engineer, data, big
 2135#Engineer, design, computer
 2135#Engineer, infrastructure, COMPUTING
+2135#Engineer, infrastructure, IT
 2135#Engineer, systems
 2135#Integrator, systems, COMPUTING
 2135#Officer, development, systems
@@ -2526,18 +2569,23 @@
 2135#Specialist, systems
 2135#Specialist, technical, computer
 2135#Specialist, technical, computer services
+2135#Specialist, visualisation, data
 2135#Strategist, IT
 2135#Writer, technical, COMPUTING
 2136#Analyst, data, COMPUTING
 2136#Analyst, database
 2136#Analyst, implementation
 2136#Analyst, information, COMPUTING
+2136#Analyst, IT
 2136#Analyst, PROGRAMMING
 2136#Analyst, project, IT
 2136#Analyst, software
+2136#Analyst, technology
 2136#Analyst, technology, information
 2136#Analyst-programmer
+2136#Architect, interface, user
 2136#Architect, software
+2136#Artist, lead, GAMES DEVELOPMENT
 2136#Author, software
 2136#Author, software, application
 2136#Author, technical, software
@@ -2560,10 +2608,22 @@
 2136#Developer, database
 2136#Developer, end, front, SOFTWARE
 2136#Developer, games
+2136#Developer, intelligence, business
+2136#Developer, interface, user
 2136#Developer, iOS
 2136#Developer, IT
+2136#Developer, JavaScript
+2136#Developer, mobile
+2136#Developer, net
+2136#Developer, Python
+2136#Developer, Scala
+2136#Developer, SharePoint
 2136#Developer, software
+2136#Developer, SQL
+2136#Developer, stack, full
 2136#Developer, systems
+2136#Developer, UI
+2136#Developer, Xamarin
 2136#Engineer, design, software
 2136#Engineer, development, software
 2136#Engineer, PROFESSIONAL, SOFTWARE
@@ -2588,8 +2648,14 @@
 2136#Specialist, software
 2136#Writer, shader
 2136#Writer, software
+2137#Architect, experience, user
 2137#Consultant, design, web
+2137#Consultant, experience, user
 2137#Consultant, internet
+2137#Creator, content
+2137#Designer, app, web
+2137#Designer, application, web
+2137#Designer, applications, web
 2137#Designer, experience, user, COMPUTING
 2137#Designer, interface, user
 2137#Designer, media, interactive
@@ -2599,46 +2665,69 @@
 2137#Designer, visual
 2137#Designer, web
 2137#Designer, website
+2137#Developer, app, web
+2137#Developer, application, web
+2137#Developer, applications, web
+2137#Developer, Drupal
+2137#Developer, e-learning
 2137#Developer, internet
 2137#Developer, multimedia
 2137#Developer, site, web
 2137#Developer, web
 2137#Developer, web, end, front
 2137#Developer, web, technical
+2137#Editor, content, digital
+2137#Editor, content, online
+2137#Editor, content, web
 2137#Editor, content, WEBSITE
 2137#Editor, web
+2137#Engineer, hosting, web
 2137#Executive, communications, web
+2137#Executive, content
 2137#Manager, content, digital
 2137#Manager, content, web
 2137#Manager, content, website
 2137#Manager, site, web
 2137#Manager, web
+2137#Manager, website
 2137#Master, web
 2137#Officer, content
 2137#Officer, development, web
-2137#Producer, content, DIGITAL
+2137#Producer, content, digital
 2137#Producer, digital
 2137#Producer, web
 2137#Publisher, desktop
 2137#Publisher, top, desk
+2137#Researcher, experience, user
+2137#Researcher, UX
 2137#Technician, web
 2137#Webmaster
 2137#Webmaster, online, education
+2137#Writer, content, DIGITAL
 2139#Analyst, network
 2139#Analyst, quality, COMPUTING
+2139#Analyst, risk, IT
+2139#Analyst, security, cyber
+2139#Analyst, security, information
 2139#Analyst, security, IT
+2139#Analyst, test, automation
 2139#Analyst, test, COMPUTING
+2139#Analyst, test, software
 2139#Auditor, IT
 2139#Consultant, application
 2139#Consultant, applications
+2139#Consultant, business, IT
 2139#Consultant, communications
 2139#Consultant, computer
 2139#Consultant, COMPUTING
+2139#Consultant, data
+2139#Consultant, digital
 2139#Consultant, IT
 2139#Consultant, network
 2139#Consultant, SAP
 2139#Consultant, security, computer
 2139#Consultant, security, cyber
+2139#Consultant, security, information
 2139#Consultant, security, IT
 2139#Consultant, security, technical
 2139#Consultant, services, network
@@ -2656,6 +2745,7 @@
 2139#Engineer, network
 2139#Engineer, project, telecommunications
 2139#Engineer, projects, telecommunications
+2139#Engineer, security, network
 2139#Engineer, systems, network
 2139#Engineer, test, PROFESSIONAL, SOFTWARE
 2139#Engineer, test, software
@@ -2667,7 +2757,9 @@
 2139#Manager, account, COMPUTING
 2139#Manager, security, computer services
 2139#Manager, security, data
+2139#Manager, security, information
 2139#Manager, security, IT
+2139#Officer, security, information
 2139#Planner, IT
 2139#Planner, network
 2139#Planner, telecommunications
@@ -2677,11 +2769,13 @@
 2139#Tester, systems, COMPUTING
 2141#Adviser, conservation
 2141#Adviser, countryside
+2141#Adviser, management, land
 2141#Conservationist
 2141#Conservationist, marine
 2141#Conservationist, nature, coastal
 2141#Consultant, ecological
 2141#Ecologist
+2141#Ecologist, marine
 2141#Inspector, buildings, historic
 2141#Inspector, HISTORIC BUILDINGS
 2141#Interpreter, heritage, CONSERVATION
@@ -2690,7 +2784,7 @@
 2141#Manager, heritage
 2141#Manager, park, national
 2141#Officer, access, countryside
-2141#Officer, access, local government:CONSERVATION
+2141#Officer, access, local government, CONSERVATION
 2141#Officer, conservancy
 2141#Officer, conservation
 2141#Officer, conservation, assistant, government
@@ -2789,11 +2883,11 @@
 2211#Examiner, medical, Jobcentre Plus
 2211#Fellow, MEDICINE
 2211#Fellow, research, clinical
-2211#Fellow, RESEARCH, MEDICINE
+2211#Fellow, research, medicine
 2211#Fellow, RESEARCH, SURGERY
 2211#Fellow, SURGERY
-2211#Fellow, university:MEDICINE
-2211#Fellow, university:SURGERY
+2211#Fellow, university:, MEDICINE
+2211#Fellow, university:, SURGERY
 2211#FRCOG
 2211#FRCP
 2211#FRCS
@@ -2842,7 +2936,7 @@
 2211#Radiotherapist
 2211#Reader, MEDICINE
 2211#Reader, SURGERY
-2211#Referee, government:MEDICAL
+2211#Referee, government, MEDICAL
 2211#Registrar, hospital service
 2211#Registrar, medical practice
 2211#Registrar, practice, general
@@ -2860,10 +2954,15 @@
 2212#Psychologist
 2212#Psychologist, business
 2212#Psychologist, clinical
+2212#Psychologist, counselling
 2212#Psychologist, educational
 2212#Psychologist, forensic
+2212#Psychologist, health
 2212#Psychologist, occupational
+2212#Psychologist, practitioner
+2212#Psychologist, registered
 2212#Psychologist, research
+2212#Psychologist, sport and exercise
 2212#Psychometrician
 2212#Psychometrist
 2213#Adviser, prescribing
@@ -2893,7 +2992,7 @@
 2215#Dentist
 2215#Fellow, DENTISTRY
 2215#Fellow, RESEARCH, DENTISTRY
-2215#Fellow, university:DENTISTRY
+2215#Fellow, university:, DENTISTRY
 2215#Lecturer, DENTISTRY
 2215#Officer, dental
 2215#Orthodontist
@@ -2965,6 +3064,7 @@
 2219#Officer, education, HEALTH
 2219#Officer, promotion, health
 2219#Orthotist
+2219#Orthotist and prosthetist
 2219#Perfusionist
 2219#Physiologist, cardiac, senior
 2219#Physiologist, respiratory, clinical
@@ -2974,6 +3074,7 @@
 2219#Practitioner, paramedical
 2219#Practitioner, perioperative
 2219#Prosthetist
+2219#Prosthetist and orthotist
 2219#Scientist, healthcare, neurophysiology
 2219#Scientist, medicine, nuclear
 2219#Specialist, education, health
@@ -2989,6 +3090,7 @@
 2221#Physiotherapist, superintendent
 2221#Physiotherapist, veterinary
 2221#Practitioner, physiotherapy
+2221#Therapist, physical
 2222#Therapist, occupational
 2223#Therapist, communication
 2223#Therapist, language
@@ -3054,8 +3156,11 @@
 2231#Nurse, care, stoma
 2231#Nurse, charge
 2231#Nurse, children's
+2231#Nurse, children's, community
 2231#Nurse, children's, registered
 2231#Nurse, children's, sick, registered
+2231#Nurse, community
+2231#Nurse, disability, learning, community
 2231#Nurse, district
 2231#Nurse, enrolled
 2231#Nurse, health, mental
@@ -3069,11 +3174,16 @@
 2231#Nurse, paediatric
 2231#Nurse, practice
 2231#Nurse, psychiatric
+2231#Nurse, psychiatric, community
 2231#Nurse, recovery
 2231#Nurse, registered
 2231#Nurse, registered, state
+2231#Nurse, school
+2231#Nurse, specialist
 2231#Nurse, staff
 2231#Nurse, student
+2231#Nurse, theatre
+2231#Nurse, theatre, operating
 2231#Nurse-companion
 2231#Nurse-ECP
 2231#Nurse-practitioner
@@ -3085,7 +3195,9 @@
 2231#Practitioner, department, operating
 2231#Practitioner, health, mental
 2231#Practitioner, nurse
+2231#Practitioner, NURSING
 2231#Practitioner, scrub, theatre
+2231#Practitioner, theatre
 2231#Practitioner, theatre, operating
 2231#RGN
 2231#RMN
@@ -3132,6 +3244,7 @@
 2311#Instructor, higher education, university
 2311#Lecturer, clinical
 2311#Lecturer, college, higher education, university
+2311#Lecturer, dance, higher education, university
 2311#Lecturer, higher education, university
 2311#Lecturer, midwifery
 2311#Lecturer, nursing
@@ -3145,6 +3258,8 @@
 2311#Reader, university
 2311#Rector, university
 2311#Teacher, clinical
+2311#Teacher, dance, higher education, university
+2311#Teacher, dancing, higher education, university
 2311#Teacher, higher education, university
 2311#Teacher, university
 2311#Tutor, clinical
@@ -3178,12 +3293,13 @@
 2314#Director of studies, sixth form college
 2314#Head of department, secondary school
 2314#Head of department, sixth form college
+2314#Head of year, secondary school
 2314#Head, assistant, secondary school
 2314#Head, assistant, sixth form college
 2314#Head, deputy, secondary school
 2314#Head, deputy, sixth form college
 2314#Instructor, secondary school
-2314#Instructor, secondary school,PHYSICAL TRAINING
+2314#Instructor, secondary school, PHYSICAL TRAINING
 2314#Instructor, sixth form college
 2314#Instructor, training, physical, secondary school
 2314#Instructor, woodwork, secondary school
@@ -3212,8 +3328,8 @@
 2314#Mistress, school, sixth form college
 2314#Mistress, secondary school
 2314#Mistress, sixth form college
-2314#Monk, secondary school:TEACHING
-2314#Nun, secondary school:TEACHING
+2314#Monk, secondary school, TEACHING
+2314#Nun, secondary school, TEACHING
 2314#Rector, secondary school
 2314#Teacher, college, form, sixth
 2314#Teacher, dance, secondary school
@@ -3262,8 +3378,8 @@
 2315#Mistress, primary school
 2315#Mistress, school, nursery school
 2315#Mistress, school, primary school
-2315#Monk, primary school:TEACHING
-2315#Nun, primary school:TEACHING
+2315#Monk, primary school, TEACHING
+2315#Nun, primary school, TEACHING
 2315#Pedagogue, centre, children's
 2315#Teacher, dance, primary school
 2315#Teacher, dancing, primary school
@@ -3359,6 +3475,7 @@
 2317#Mistress, head, sixth form college
 2317#Mistress, head, special school
 2317#Officer, executive, university
+2317#Officer, recruitment, international, university
 2317#President, COLLEGE
 2317#Principal teacher of guidance
 2317#Principal, further education
@@ -3406,6 +3523,7 @@
 2319#Assistant, language
 2319#Coach, vocal
 2319#Coach, voice
+2319#Communicator, science
 2319#Consultant, education
 2319#Consultant, educational
 2319#Consultant, years, early
@@ -3448,6 +3566,7 @@
 2319#Principal, training establishment
 2319#Teacher of English as a foreign language
 2319#Teacher, adult education centre
+2319#Teacher, ballet, QUALIFIED
 2319#Teacher, centre, education, adult
 2319#Teacher, EFL
 2319#Teacher, English as a second language
@@ -3556,7 +3675,7 @@
 2421#Accountant, cost, QUALIFIED
 2421#Accountant, district
 2421#Accountant, financial
-2421#Accountant, financial, coal mine,QUALIFIED
+2421#Accountant, financial, coal mine, QUALIFIED
 2421#Accountant, forensic
 2421#Accountant, fund
 2421#Accountant, government
@@ -3599,6 +3718,7 @@
 2421#FSAA
 2421#Inspector of audits, DETR
 2421#Liquidator, company
+2421#Manager, audit, internal
 2421#Manager, insolvency
 2421#Officer, development, cost, coal mine
 2421#Officer, expenditure, coal mine
@@ -3610,6 +3730,7 @@
 2423#Adviser, management
 2423#Adviser, services, management
 2423#Analyst, business
+2423#Analyst, business, digital
 2423#Analyst, catastrophe
 2423#Analyst, commercial
 2423#Analyst, intelligence, business
@@ -3668,14 +3789,16 @@
 2424#Manager, project
 2424#Manager, project, financial services
 2424#Manager, project, local government
+2424#Manager, project, local government social services, RESIDENTIAL
 2424#Manager, project, local government: social services
-2424#Manager, project, local government: social services:RESIDENTIAL
 2424#Manager, project, publishing
 2424#Manager, project, university
 2424#Manager, projects
 2424#Manager, risk
 2424#Manager, risk, credit
 2424#Manager, support, project
+2424#Master, scrum
+2424#Officer, delivery, project
 2424#Officer, knowledge, chief
 2424#Officer, programme
 2424#Officer, support, research
@@ -3719,6 +3842,7 @@
 2425#Strategist, quantitative
 2426#Analyst, computer, forensic
 2426#Analyst, crime, police force
+2426#Analyst, forensic, digital
 2426#Analyst, information
 2426#Analyst, intelligence
 2426#Analyst, intelligence, criminal
@@ -3763,6 +3887,7 @@
 2429#A2, Dept for International Development
 2429#Administrator, arts
 2429#Administrator, registration, senior, Land Registry
+2429#Adviser, conflict
 2429#Adviser, policy, government
 2429#Adviser, policy, local government
 2429#Advocate, policy
@@ -3929,6 +4054,7 @@
 2442#Worker, field, local government: social services
 2442#Worker, social
 2442#Worker, social, forensic
+2442#Worker, social, health, mental
 2442#Worker, social, medical
 2442#Worker, social, psychiatric
 2443#Inspector, National Probation Service
@@ -4048,7 +4174,7 @@
 2461#Engineer, progress
 2461#Engineer, quality
 2461#Engineer, systems, quality
-2461#Inspector, chief, engineering,PROFESSIONAL, QUALITY CONTROL
+2461#Inspector, chief, engineering, PROFESSIONAL, QUALITY CONTROL
 2461#Inspector, civil engineering
 2461#Manager, engineering, quality
 2461#Officer, assurance, quality, PROFESSIONAL
@@ -4064,6 +4190,7 @@
 2461#Technologist, garment
 2462#Accreditor
 2462#Adjudicator, NATIONAL INSURANCE REGULATIONS
+2462#Adviser, regulatory
 2462#Analyst, affairs, regulatory
 2462#Analyst, surveillance, compliance
 2462#Analyst, surveillance, market
@@ -4082,11 +4209,13 @@
 2462#Manager, asset
 2462#Manager, assurance, quality
 2462#Manager, client, British Standards Institute
+2462#Manager, coding, clinical
 2462#Manager, compliance
 2462#Manager, control, quality
 2462#Manager, finishing
 2462#Manager, governance, information
 2462#Manager, health and safety, quality
+2462#Manager, performance and planning
 2462#Manager, pharmacovigilance
 2462#Manager, QA
 2462#Manager, quality
@@ -4100,6 +4229,7 @@
 2462#Officer, quality and compliance
 2462#Regulator, financial
 2462#Regulator, financial, government
+2462#Scientist, pharmacovigilance
 2463#Inspector, food
 2463#Inspector, health, environmental
 2463#Inspector, health, port
@@ -4132,11 +4262,14 @@
 2471#Editor, art
 2471#Editor, content, newspapers, magazines
 2471#Editor, copy
+2471#Editor, desk, multimedia
+2471#Editor, digital
 2471#Editor, listings
 2471#Editor, managing, newspapers, magazines
 2471#Editor, news, newspaper
 2471#Editor, newspaper
 2471#Editor, newspapers, magazines
+2471#Editor, on-line
 2471#Editor, picture
 2471#Editor, production
 2471#Editor, sub
@@ -4144,6 +4277,7 @@
 2471#Journalist
 2471#Journalist, broadcast
 2471#Journalist, broadcasting
+2471#Journalist, data
 2471#Journalist, digital
 2471#Journalist, multimedia
 2471#Journalist, online
@@ -4170,6 +4304,7 @@
 2472#Agent, press
 2472#Agent, publicity
 2472#Aide, communications
+2472#Assistant, communications, digital
 2472#Assistant, communications, press, public relations
 2472#Assistant, PR
 2472#Assistant, publications
@@ -4238,9 +4373,12 @@
 2473#Manager, projects, advertising
 2473#Manager, raising, fund
 2473#Manager, traffic, advertising
+2741#Editor, online
+2741#Editor, publishing
 3111#Aid, laboratory
 3111#Aide, laboratory
 3111#Analyser
+3111#Analyst, DNA
 3111#Analyst, geophysical
 3111#Analyst, laboratory
 3111#Analyst, material
@@ -4255,9 +4393,11 @@
 3111#Assistant, laboratory
 3111#Assistant, laboratory, medical
 3111#Assistant, research, MEDICAL
+3111#Assistant, science, healthcare
 3111#Assistant, scientific
 3111#Associate, trial, clinical
 3111#Attendant, laboratory
+3111#Cytoscreener
 3111#Foreman, laboratory
 3111#Foreman, physics, health
 3111#Geotechnician
@@ -4285,7 +4425,9 @@
 3111#Officer, technical, National Institute of Agricultural Botany
 3111#Operator, research, oil refining
 3111#Operator, spectroscope
+3111#Practitioner, associate, LABORATORY
 3111#Researcher, medical
+3111#Scientist, assistant
 3111#Screener, cytology
 3111#Spectrographer
 3111#Steward, laboratory
@@ -4294,6 +4436,7 @@
 3111#Technician, analytical
 3111#Technician, anatomy
 3111#Technician, botanical
+3111#Technician, chemistry
 3111#Technician, cytological
 3111#Technician, food
 3111#Technician, geological
@@ -4302,7 +4445,10 @@
 3111#Technician, hospital
 3111#Technician, hospital service
 3111#Technician, laboratory
+3111#Technician, laboratory, chemistry
 3111#Technician, laboratory, medical
+3111#Technician, laboratory, microbiology
+3111#Technician, laboratory, school
 3111#Technician, laboratory, teaching
 3111#Technician, microbiology
 3111#Technician, physics, hospital service
@@ -4325,6 +4471,7 @@
 3111#Tester, water
 3111#Worker, laboratory
 3111#Worker, research, MEDICAL
+3111#Worker, support, biomedical
 3112#Assistant, electronics
 3112#Engineer, assistant, broadcasting
 3112#Engineer, executive, telecommunications
@@ -4390,7 +4537,7 @@
 3113#Technician, installation
 3113#Technician, instrument, steelworks
 3113#Technician, mechanical
-3113#Technician, steelworks:INSTRUMENT
+3113#Technician, steelworks, INSTRUMENT
 3113#Technician, traffic
 3113#Technician, turbine, wind, construction
 3113#Technician, WIND TUNNEL
@@ -4542,19 +4689,30 @@
 3122#Technician, CAD
 3122#Technician, design
 3122#Technician, draughting
+3122#Technician, printing, 3D
 3122#Tracer
 3122#Weightsman
 3131#Administrator, computer
 3131#Administrator, database
+3131#Administrator, digital
+3131#Administrator, Hadoop
 3131#Administrator, internet
 3131#Administrator, IT
 3131#Administrator, network
 3131#Administrator, system
+3131#Administrator, system, Hadoop
 3131#Administrator, systems
+3131#Administrator, systems, Hadoop
+3131#Administrator, website
 3131#Analyst, content
 3131#Analyst, maintenance, COMPUTING
+3131#Assistant, content, digital
+3131#Assistant, content, e-commerce
+3131#Assistant, content, web
 3131#Assistant, IT
 3131#Assistant, management, content
+3131#Assistant, production, online
+3131#Assistant, website
 3131#Auditor, computer, TECHNICAL
 3131#Controller, computer
 3131#Controller, COMPUTING
@@ -4606,19 +4764,26 @@
 3131#Technician, systems, information
 3131#Tester, assurance, quality, COMPUTING
 3131#Tester, games, computer
+3132#Administrator, desk, help
 3132#Administrator, helpdesk
 3132#Adviser, technical, COMPUTING
-3132#Agent, intelligence, counter, retail:TELECOMMUNICATIONS
+3132#Agent, intelligence, counter, retail, TELECOMMUNICATIONS
 3132#Analyst, desk, service
 3132#Analyst, helpdesk
 3132#Analyst, support, applications
 3132#Analyst, support, COMPUTING
 3132#Analyst, support, customer
 3132#Analyst, support, desktop
+3132#Analyst, support, IT
 3132#Analyst, support, PC
+3132#Analyst, support, software
 3132#Analyst, support, systems
 3132#Analyst, support, technical
+3132#Assistant, helpdesk
+3132#Assistant, helpdesk, IT
 3132#Assistant, support, computer
+3132#Assistant, support, IT
+3132#Associate, IT
 3132#Associate, services, client, COMPUTING
 3132#Consultant, support, COMPUTING
 3132#Controller, services, data
@@ -4626,21 +4791,24 @@
 3132#Engineer, support, technical, COMPUTING
 3132#Engineer, technical, COMPUTING
 3132#Executive, support, COMPUTING
-3132#Genius, retail: COMPUTING
-3132#Guru, retail:TELECOMMUNICATIONS
+3132#Genius, retail, COMPUTING
+3132#Guru, retail, TELECOMMUNICATIONS
 3132#Leader, team, desk, help, COMPUTING
 3132#Leader, team, IT
 3132#Leader, team, technology, information
 3132#Officer, computer
 3132#Officer, computing
+3132#Officer, IT
 3132#Officer, support, COMPUTING
 3132#Officer, support, helpline, IT
+3132#Officer, support, IT
 3132#Officer, support, system
 3132#Officer, support, systems
 3132#Operator, desk, help
 3132#Operator, helpline, COMPUTING
 3132#Operator, support, IT
 3132#Specialist, support, COMPUTING
+3132#Specialist, support, IT
 3132#Specialist, support, system
 3132#Specialist, support, technical, COMPUTING
 3132#Supervisor, desk, help
@@ -4675,6 +4843,7 @@
 3218#Coordinator, implantology
 3218#Curator, instrument
 3218#Dentist, equine
+3218#Dispenser, aid, hearing
 3218#Educator, health, dental
 3218#Electro-encephalographer
 3218#Engineer, dental
@@ -4768,6 +4937,7 @@
 3219#Teacher, technique, Alexander
 3219#Technologist, care, critical
 3219#Therapist
+3219#Therapist, Bowen
 3219#Therapist, colour
 3219#Therapist, complimentary
 3219#Therapist, diversional
@@ -4828,7 +4998,7 @@
 3233#Mentor, behaviour
 3233#Mentor, learning
 3233#Officer, access, education, local government
-3233#Officer, access, local government:EDUCATION
+3233#Officer, access, local government, EDUCATION
 3233#Officer, attendance, school
 3233#Officer, care, child
 3233#Officer, care, child, residential
@@ -4853,7 +5023,7 @@
 3234#Coordinator, project, housing
 3234#Coordinator, project, housing, welfare
 3234#Enabler, housing, rural
-3234#Factor, housing, local government:SCOTLAND
+3234#Factor, housing, local government, SCOTLAND
 3234#Officer, accommodations
 3234#Officer, advisory, HOUSING
 3234#Officer, development, housing, local government
@@ -4949,7 +5119,7 @@
 3239#Missioner
 3239#Navigator, care
 3239#Officer, access, disability, local government
-3239#Officer, access, local government:DISABILITY
+3239#Officer, access, local government, DISABILITY
 3239#Officer, advisory, WELFARE
 3239#Officer, brokerage, social, welfare services
 3239#Officer, care
@@ -4964,7 +5134,7 @@
 3239#Officer, information and advice
 3239#Officer, justice, restorative
 3239#Officer, liaison, student
-3239#Officer, placement , local government: social services
+3239#Officer, placement, local government: social services
 3239#Officer, relieving
 3239#Officer, resettlement
 3239#Officer, rights, welfare
@@ -5158,6 +5328,7 @@
 3319#Analyst, forensic
 3319#Analyst, fraud
 3319#Analyst, handwriting
+3319#Analyst, strategy, fraud
 3319#Assistant, watch, coastguard
 3319#Assistant, watch, coastguards
 3319#Coastguard
@@ -5345,6 +5516,7 @@
 3413#Jockey, disc, broadcasting
 3413#Judge, ENTERTAINMENT
 3413#Juggler
+3413#Livestreamer
 3413#Magician
 3413#Man, stunt
 3413#Mannequin
@@ -5370,6 +5542,7 @@
 3413#Ventriloquist
 3413#Vlogger
 3413#Vocalist
+3413#YouTuber
 3414#Artist, dance
 3414#Ballerina
 3414#Choreographer
@@ -5461,6 +5634,7 @@
 3416#Director, television
 3416#Director, theatre
 3416#Director, video
+3416#Director, visual artist and creative
 3416#Editor, film
 3416#Editor, tape, video
 3416#Editor, video
@@ -5568,6 +5742,7 @@
 3417#Operator, video
 3417#Operator, VT
 3417#Photographer
+3417#Pilot, drone, commercial
 3417#Projectionist
 3417#Puller, focus
 3417#Recorder, sound recording
@@ -5576,10 +5751,12 @@
 3417#Soundman
 3417#Supervisor, vision, broadcasting
 3417#Technician, aids, visual
+3417#Technician, backline
 3417#Technician, camera, video
 3417#Technician, cine
 3417#Technician, film
 3417#Technician, film studio
+3417#Technician, imaging, digital
 3417#Technician, media
 3417#Technician, photographic
 3417#Technician, sound
@@ -5612,6 +5789,7 @@
 3421#Artist, Mac
 3421#Artist, stereo
 3421#Artist, technical
+3421#Artist, texture
 3421#Artist, VFX
 3421#Artworker
 3421#Artworker, digital
@@ -5628,14 +5806,18 @@
 3421#Copyist, textile printing
 3421#Decorator, display
 3421#Designer, 3D
+3421#Designer, advert
 3421#Designer, advertising
 3421#Designer, art
 3421#Designer, digital
 3421#Designer, display
 3421#Designer, exhibition
 3421#Designer, graphic
+3421#Designer, graphic and web
+3421#Designer, graphics, motion
 3421#Designer, infographic
 3421#Designer, multi-media
+3421#Designer, visualisation, data
 3421#Illuminator
 3421#Illustrator, technical
 3421#Modeller, environment
@@ -5649,6 +5831,7 @@
 3421#Supervisor, effects, visual
 3421#Supervisor, VFX
 3421#Technician, graphics
+3421#Visualiser, 3D
 3421#Visualiser, advertising
 3422#Adviser, fashion
 3422#Artist, boot and shoe
@@ -5660,6 +5843,7 @@
 3422#Consultant, packaging
 3422#Couturier
 3422#Decorator, interior
+3422#Designer, apparel
 3422#Designer, applications
 3422#Designer, bathroom
 3422#Designer, body, vehicle mfr
@@ -5693,6 +5877,7 @@
 3422#Designer, instrumentation
 3422#Designer, interior
 3422#Designer, interior and spatial
+3422#Designer, interior design
 3422#Designer, jewellery
 3422#Designer, kitchen
 3422#Designer, knitwear
@@ -5729,6 +5914,7 @@
 3422#Planner, kitchen
 3422#Predictor, fashion
 3422#Stylist, colour, vehicle mfr
+3422#Stylist, interior
 3422#Stylist, vehicle mfr
 3422#Technologist, packaging
 3441#Athlete
@@ -5752,6 +5938,7 @@
 3441#Sportsman, professional
 3441#Wrestler
 3442#Agent, sports
+3442#Coach, shooting
 3442#Coach, sports
 3442#Coordinator, sports
 3442#Handicapper
@@ -5766,6 +5953,7 @@
 3442#Instructor, riding
 3442#Instructor, sailing
 3442#Instructor, scuba
+3442#Instructor, shooting
 3442#Instructor, SPORTS
 3442#Instructor, swimming
 3442#Judge, SPORTS
@@ -6181,6 +6369,7 @@
 3534#Analyst, pricing
 3534#Analyst, risk, credit
 3534#Arranger, mortgage
+3534#Associate, banking
 3534#Associate, finance
 3534#Associate, financial services
 3534#Associate, insurance
@@ -6350,9 +6539,10 @@
 3539#Analyst, information, management
 3539#Analyst, logistics
 3539#Analyst, management
+3539#Analyst, management, data
 3539#Analyst, market
 3539#Analyst, methods
-3539#Analyst, o and m
+3539#Analyst, O&M
 3539#Analyst, organisation and methods
 3539#Analyst, performance
 3539#Analyst, quality, data
@@ -6389,7 +6579,7 @@
 3539#Consultant, leisure
 3539#Consultant, logistics
 3539#Consultant, marine
-3539#Consultant, o and m
+3539#Consultant, O&M
 3539#Consultant, organisation and methods
 3539#Consultant, political
 3539#Consultant, printing
@@ -6431,7 +6621,7 @@
 3539#Graphologist
 3539#Inspector, practice, standard
 3539#Inspector, room, standards
-3539#Investigator, o and m
+3539#Investigator, O&M
 3539#Investigator, organisation and method
 3539#Investigator, study, work
 3539#Leader, team, PROJECT MANAGEMENT
@@ -6443,6 +6633,7 @@
 3539#Officer, contract, manufacturing
 3539#Officer, contracts, building construction
 3539#Officer, contracts, manufacturing
+3539#Officer, data
 3539#Officer, data, GIS
 3539#Officer, evaluation, job
 3539#Officer, GIS, assistant
@@ -6457,12 +6648,13 @@
 3539#Officer, management, time
 3539#Officer, measurement, work
 3539#Officer, methods
-3539#Officer, o and m
+3539#Officer, O&M
 3539#Officer, organisation and methods
 3539#Officer, organisation, government
 3539#Officer, patents
 3539#Officer, planning, strategic
 3539#Officer, production, technical
+3539#Officer, project
 3539#Officer, quality, data
 3539#Officer, research, operational
 3539#Officer, review, performance
@@ -6480,7 +6672,7 @@
 3539#Planner, strategic
 3539#Practitioner, study, works
 3539#Setter, rate
-3539#Specialist, o and m
+3539#Specialist, O&M
 3539#Specialist, organisation and methods
 3539#Strategist
 3541#Administrator, contracts, purchasing
@@ -6525,6 +6717,9 @@
 3541#Purchaser
 3541#Salesman-buyer
 3541#Selector, range, retail trade
+3541#Specialist, chain, supply
+3542#Administrator, e-commerce
+3542#Adviser, sales, technical
 3542#Adviser, service, home, gas supplier
 3542#Adviser, technical, SALES
 3542#Agent, agricultural
@@ -6563,6 +6758,7 @@
 3542#Executive, account, enterprise
 3542#Executive, account, SALES
 3542#Executive, accounts, national
+3542#Executive, e-commerce
 3542#Executive, sales
 3542#Executive, sales and marketing
 3542#Handler, account, sales
@@ -6626,19 +6822,23 @@
 3542#Traveller, commercial
 3543#Advertiser
 3543#Adviser, marketing
-3543#Agent, ADVERTISING
+3543#Agent, advertising
 3543#Agent, leasing, CAR HIRE
 3543#Agent, marketing
 3543#Analyst, chain, supply
 3543#Analyst, MARKET RESEARCH
 3543#Analyst, marketing
+3543#Analyst, marketing, digital
 3543#Analyst, media
+3543#Analyst, media, social
 3543#Analyst, research, market
 3543#Analyst, support, sales
 3543#Assistant, development, business
 3543#Assistant, marketing, digital
 3543#Assistant, marketing, online
 3543#Assistant, marketing, sales
+3543#Assistant, media, digital
+3543#Assistant, media, social
 3543#Assistant, sales and marketing
 3543#Associate, marketing
 3543#Campaigner
@@ -6646,6 +6846,8 @@
 3543#Consultant, client, MARKET RESEARCH
 3543#Consultant, fundraising
 3543#Consultant, marketing
+3543#Consultant, marketing, digital
+3543#Consultant, marketing, internet
 3543#Consultant, research, market
 3543#Consultant, telemarketing
 3543#Consultant, tourism
@@ -6657,14 +6859,18 @@
 3543#Controller, promotions
 3543#Coordinator, account, advertising
 3543#Coordinator, appeals
+3543#Coordinator, digital
 3543#Coordinator, marketing
 3543#Coordinator, marketing and sales
+3543#Coordinator, marketing, digital
 3543#Coordinator, national, appeals, telephone
 3543#Coordinator, promotion
 3543#Coordinator, promotions
 3543#Copywriter, creative, advertising
+3543#Designer, service, MARKETING
 3543#Developer, product, MARKETING
 3543#Executive, account, advertising
+3543#Executive, account, digital, MARKETING
 3543#Executive, account, MARKETING
 3543#Executive, accounts, advertising
 3543#Executive, advertising
@@ -6676,7 +6882,9 @@
 3543#Executive, marketing
 3543#Executive, marketing, content
 3543#Executive, marketing, digital
+3543#Executive, marketing, online
 3543#Executive, media
+3543#Executive, media, digital
 3543#Executive, project, advertising
 3543#Executive, promotion, sales
 3543#Executive, promotions
@@ -6686,7 +6894,11 @@
 3543#Fundraiser
 3543#Hacker, growth, MARKETING
 3543#Handler, account
+3543#Marketer, digital
 3543#Marketer, internet
+3543#Marketer, music, digital
+3543#Marketer, network
+3543#Marketer, online
 3543#Officer, appeal
 3543#Officer, appeals
 3543#Officer, commercial, railways
@@ -6698,6 +6910,7 @@
 3543#Officer, development, tourist
 3543#Officer, fundraising
 3543#Officer, marketing
+3543#Officer, marketing, digital
 3543#Officer, promotion, sales
 3543#Officer, research, market
 3543#Organiser, appeals
@@ -6711,6 +6924,8 @@
 3543#Specialist, products, MARKETING
 3543#Storyteller, brand
 3543#Storyteller, MARKETING
+3543#Strategist, brand
+3543#Strategist, marketing
 3543#Superintendent, marketing
 3543#Supervisor, account, advertising
 3543#Supervisor, development, sales
@@ -6784,6 +6999,7 @@
 3545#Manager, market, MARKETING
 3545#Manager, marketing
 3545#Manager, marketing, digital
+3545#Manager, marketing, online
 3545#Manager, marketing, product
 3545#Manager, merchandise
 3545#Manager, merchandising
@@ -6902,7 +7118,7 @@
 3561#A3, Dept for International Development
 3561#Administrator, hospital
 3561#Administrator, hospital service
-3561#APT, local government:GRADE 4,5
+3561#AP(T), local government, GRADE 4,5
 3561#Assistant, services, democratic
 3561#B1, Dept for International Development
 3561#B1, Northern Ireland Office
@@ -6939,8 +7155,8 @@
 3561#Coordinator, experience, work
 3561#Coordinator, project, local government
 3561#Counsellor, government
-3561#Executive, postal, PO:GRADE A
-3561#Executive, postal, PO:GRADE B
+3561#Executive, postal, PO, GRADE A
+3561#Executive, postal, PO, GRADE B
 3561#Grade 10, Foreign and Commonwealth Office
 3561#Grade 8, Foreign and Commonwealth Office
 3561#Grade 9, Foreign and Commonwealth Office
@@ -6975,7 +7191,7 @@
 3561#Officer, equipment, local government
 3561#Officer, establishment, government
 3561#Officer, European, local government
-3561#Officer, executive, higher D, government:FAST STREAM
+3561#Officer, executive, higher (D), government, FAST STREAM
 3561#Officer, executive, higher, government
 3561#Officer, executive, higher, PO
 3561#Officer, executive, senior, government
@@ -7029,7 +7245,9 @@
 3562#Adviser, relations, industrial
 3562#Adviser, resources, human
 3562#Analyst, evaluation, job
+3562#Analyst, HR
 3562#Analyst, personnel
+3562#Analyst, resources, human
 3562#Analyst, reward
 3562#Assistant, evaluation, job
 3562#Assistant, personnel
@@ -7104,6 +7322,7 @@
 3563#Consultant, scheme, TRAINING
 3563#Consultant, training
 3563#Coordinator, course, training
+3563#Coordinator, e-learning
 3563#Coordinator, TEC
 3563#Coordinator, training
 3563#Instructor, apprentice
@@ -7128,6 +7347,8 @@
 3563#Instructor, training provider
 3563#Lecturer, INDUSTRIAL TRAINING
 3563#Manager, delivery, training
+3563#Manager, e-learning
+3563#Manager, learning, digital
 3563#Manager, NVQ
 3563#Manager, training
 3563#Manager, training and development
@@ -7166,6 +7387,7 @@
 3564#Adviser, personal, careers service
 3564#Assistant, careers
 3564#Broker, employment
+3564#Coach, career
 3564#Coach, employment
 3564#Coach, job
 3564#Consultant, careers
@@ -7269,8 +7491,8 @@
 3565#Inspector, livestock, area
 3565#Inspector, local government
 3565#Inspector, local government: works dept
-3565#Inspector, machine, docks:WEIGHING MACHINES
-3565#Inspector, machine, railways,WEIGHING MACHINES
+3565#Inspector, machine, docks, WEIGHING MACHINES
+3565#Inspector, machine, railways, WEIGHING MACHINES
 3565#Inspector, maintenance, gas supplier
 3565#Inspector, market, local government
 3565#Inspector, markets, local government
@@ -7346,7 +7568,7 @@
 3565#Officer, standards, trading
 3565#Officer, trading, fair
 3565#Superintendent, RSPCA
-3565#Supervisor, planning , construction
+3565#Supervisor, planning, construction
 3565#Surveyor, control, building
 3565#Surveyor, Lloyd's
 3565#Surveyor, ship
@@ -7573,10 +7795,11 @@
 4112#Writer, MOD
 4113#Administrator, electoral
 4113#Administrator, local government
+4113#Administrator, MAPPA
 4113#Administrator, police service
 4113#Adviser, benefit, local government
 4113#Adviser, benefits, local government
-4113#APT, local government:GRADE 1,2,3
+4113#AP(T), local government, GRADE 1,2,3
 4113#Assessor, benefit, housing
 4113#Assessor, benefits, local government
 4113#Assistant, admin, local government
@@ -7969,6 +8192,7 @@
 4129#Administrator, cost
 4129#Administrator, finance
 4129#Administrator, financial
+4129#Administrator, financial services
 4129#Administrator, mortgage
 4129#Administrator, services, financial
 4129#Administrator, wrap
@@ -8095,7 +8319,7 @@
 4129#Representative, banker's
 4129#Representative, banking
 4129#Salesman, ticket
-4129#Seller, betting and gaming:TOTALISATOR
+4129#Seller, betting and gaming, TOTALISATOR
 4129#Seller, ticket
 4129#Settler, BETTING
 4129#Timekeeper
@@ -8288,7 +8512,6 @@
 4132#Clerk, claims, insurance
 4132#Clerk, estimating, insurance
 4132#Clerk, insurance
-4132#Clerk, office , insurance
 4132#Clerk, office, insurance
 4132#Clerk, pensions
 4132#Correspondent, claims
@@ -8608,6 +8831,7 @@
 4151#Assistant, commercial, SALES
 4151#Assistant, marketing
 4151#Assistant, operations, CLERICAL
+4151#Assistant, sales, online
 4151#Assistant, trading, eBay
 4151#Clerk, administration, sales
 4151#Clerk, office, sales
@@ -8654,6 +8878,7 @@
 4159#Assistant, editor's, newspaper
 4159#Assistant, estates
 4159#Assistant, information
+4159#Assistant, management, facilities
 4159#Assistant, management, housing
 4159#Assistant, manager's
 4159#Assistant, office
@@ -8772,7 +8997,7 @@
 4162#Clerk-in-charge
 4162#Controller of typists
 4162#Controller, office
-4162#Executive, postal, PO:GRADE C
+4162#Executive, postal, PO, GRADE C
 4162#Executive, support, sales
 4162#Foreman, progress
 4162#Head, section, CLERICAL
@@ -8908,7 +9133,11 @@
 4216#Receptionist-typist
 4216#Supervisor, reception
 4217#Administrator, data
+4217#Administrator, entry, data
 4217#Assistant, computer
+4217#Assistant, data
+4217#Assistant, database
+4217#Assistant, entry, data
 4217#Assistant, input
 4217#Clerk, computer
 4217#Clerk, control, data
@@ -8920,6 +9149,7 @@
 4217#Clerk, VDU
 4217#Clerk-VDU operator
 4217#Controller, data, computer
+4217#Coordinator, data
 4217#Inputter, computer
 4217#Inputter, copy
 4217#Inputter, data
@@ -8932,6 +9162,7 @@
 4217#Machinist, book-keeping
 4217#Machinist, calculating
 4217#Officer, data, clinical
+4217#Officer, entry, data
 4217#Officer, preparation, data
 4217#Officer, processing, data
 4217#Operative, computer
@@ -9018,6 +9249,7 @@
 5111#Keeper, pig
 5111#Keeper, poultry
 5111#Landholder
+5111#Manager, dairy, farming
 5111#Manager, herd
 5111#Manager, livestock
 5111#Manager, pig
@@ -9123,6 +9355,7 @@
 5119#Gamekeeper
 5119#Ghillie
 5119#Gillie
+5119#Guide, angling
 5119#Keeper, bee
 5119#Keeper, fish
 5119#Keeper, game
@@ -9354,7 +9587,7 @@
 5214#Chipper, shipbuilding
 5214#Constructor, rig, oil
 5214#Driller, boiler mfr
-5214#Driller, constructional engineering:METAL
+5214#Driller, constructional engineering, METAL
 5214#Driller, hand
 5214#Driller, hydraulic
 5214#Driller, plate
@@ -9819,7 +10052,7 @@
 5223#Craftsman, underground, coal mine
 5223#Engineer, agricultural
 5223#Engineer, assembly, vehicle mfr
-5223#Engineer, assistant, coal mine:UNIT
+5223#Engineer, assistant, coal mine, UNIT
 5223#Engineer, assistant, MECHANICAL
 5223#Engineer, bakery
 5223#Engineer, brewer's
@@ -10178,7 +10411,7 @@
 5223#Mounter, engine
 5223#Overlooker, frame, MAINTENANCE
 5223#Overlooker, loom, MAINTENANCE
-5223#Overlooker, textile mfr:MAINTENANCE
+5223#Overlooker, textile mfr, MAINTENANCE
 5223#Overlooker, weaving, MAINTENANCE
 5223#Pumpwright
 5223#Railer, bedstead mfr
@@ -10364,7 +10597,6 @@
 5225#Engineer, refrigerating
 5225#Engineer, refrigeration
 5225#Engineer, repair, refrigeration
-5225#Engineer, service , REFRIGERATION
 5225#Engineer, service, refrigeration
 5225#Fitter, conditioning, air
 5225#Installer, conditioning, air
@@ -10388,7 +10620,7 @@
 5231#Engineer, breakdown, vehicle
 5231#Engineer, bus
 5231#Engineer, diesel
-5231#Engineer, diesel, vehicle mfr:VEHICLES
+5231#Engineer, diesel, vehicle mfr, VEHICLES
 5231#Engineer, diesel, VEHICLES
 5231#Engineer, electrical, auto
 5231#Engineer, fleet
@@ -10412,7 +10644,7 @@
 5231#Fitter, automobile
 5231#Fitter, car
 5231#Fitter, diesel
-5231#Fitter, diesel, vehicle mfr:VEHICLES
+5231#Fitter, diesel, vehicle mfr, VEHICLES
 5231#Fitter, diesel, VEHICLES
 5231#Fitter, engine, diesel
 5231#Fitter, garage
@@ -10420,7 +10652,7 @@
 5231#Fitter, LGV
 5231#Fitter, lining, brake
 5231#Fitter, maintenance, VEHICLE SERVICING
-5231#Fitter, mechanical, vehicle mfr:VEHICLES
+5231#Fitter, mechanical, vehicle mfr, VEHICLES
 5231#Fitter, mechanical, VEHICLES
 5231#Fitter, motor
 5231#Fitter, motor, vehicle mfr
@@ -10428,7 +10660,7 @@
 5231#Fitter, trailer
 5231#Fitter, transport
 5231#Fitter, truck, ELECTRIC
-5231#Fitter, vehicle mfr:VEHICLES
+5231#Fitter, vehicle mfr, VEHICLES
 5231#Fitter, vehicle, motor
 5231#Fitter, vehicles
 5231#Fitter-mechanic, garage
@@ -10604,8 +10836,8 @@
 5236#Engineer, first, fishing
 5236#Engineer, marine
 5236#Engineer, marine, BOAT, BARGE
-5236#Engineer, nos , boatbuilding
-5236#Engineer, nos , shipbuilding
+5236#Engineer, nos, boatbuilding
+5236#Engineer, nos, shipbuilding
 5236#Engineer, trawler
 5236#Engineer-mechanic, shipping
 5236#Erector, beam, shipbuilding
@@ -10641,7 +10873,7 @@
 5236#Worker, blowlamp, shipbuilding
 5236#Worker, steel, shipbuilding
 5237#Engineer, locomotive
-5237#Engineer, nos , railway, rolling stock maintenance
+5237#Engineer, nos, railway, rolling stock maintenance
 5237#Engineer, railway
 5237#Engineer, stock, rolling
 5237#Examiner, brake, railways
@@ -10797,8 +11029,8 @@
 5242#Engineer, cable
 5242#Engineer, data
 5242#Engineer, exchange, telephone
-5242#Engineer, field , telecommunications
 5242#Engineer, field, service, home, BROADBAND
+5242#Engineer, field, telecommunications
 5242#Engineer, IN
 5242#Engineer, installation, cable
 5242#Engineer, installation, telecommunications
@@ -10831,7 +11063,7 @@
 5242#Fitter, maintenance, telecommunications
 5242#Fitter, telephone
 5242#Hand, maintenance, telecommunications
-5242#Inspector, flight, airport:RADIO
+5242#Inspector, flight, airport, RADIO
 5242#Installer, cable
 5242#Installer, telecommunications
 5242#Installer, telephone
@@ -10878,7 +11110,7 @@
 5242#Technician, electrical, telecommunications
 5242#Technician, factory, telecommunications
 5242#Technician, telecommunications
-5242#Technician, telecommunications:2B
+5242#Technician, telecommunications, 2B
 5242#Technician, TELEGRAPH, TELEPHONE EQUIPMENT
 5242#Technician, telephone
 5242#Wireman, overhead
@@ -10941,7 +11173,7 @@
 5245#Technician, service, computer
 5249#Adjuster, relay
 5249#Craftsman, electricity supplier
-5249#Diagnostician, HM Dockyard:ELECTRICAL
+5249#Diagnostician, HM Dockyard, ELECTRICAL
 5249#Engineer, alarm
 5249#Engineer, broadcast
 5249#Engineer, broadcasting
@@ -11621,7 +11853,7 @@
 5319#Technician, access, rope
 5319#Technician, concrete
 5319#Technician, maintenance, BUILDINGS
-5319#Technician, support, life, construction:DIVING
+5319#Technician, support, life, construction, DIVING
 5319#Underpinner
 5319#Waller, curtain
 5321#Caster, rough, building construction
@@ -11763,7 +11995,7 @@
 5330#Foreman, civilian, government
 5330#Foreman, concrete
 5330#Foreman, construction
-5330#Foreman, constructional engineering:METAL
+5330#Foreman, constructional engineering, METAL
 5330#Foreman, contractor's
 5330#Foreman, demolition
 5330#Foreman, DETR
@@ -11913,7 +12145,7 @@
 5411#Milliner, hosiery
 5411#Mistress, weaving
 5411#Mounter, textile weaving
-5411#Overlooker, loom, textile mfr: textile weaving:MAINTENANCE
+5411#Overlooker, loom, textile mfr textile weaving, MAINTENANCE
 5411#Plier, needle, hosiery, knitwear mfr
 5411#Putter-up, textile mfr: textile weaving
 5411#Runner-off, hosiery, knitwear mfr
@@ -13721,7 +13953,7 @@
 5442#Repairer, furniture
 5442#Repairer, pipe, TOBACCO PIPES
 5442#Restorer, antiques
-5442#Restorer, FURNITURE
+5442#Restorer, furniture
 5442#Seater, chair
 5442#Splicer, veneer
 5442#Sprayer, cellulose, furniture mfr
@@ -14279,6 +14511,7 @@
 6125#Helper, school
 6125#Supervisor, cover, education
 6125#Supervisor, cover, educational establishments
+6125#Technician, food, educational establishments
 6125#Worker, support, teacher's
 6126#Assistant, integration, schools
 6126#Assistant, needs, special, educational establishments
@@ -14421,6 +14654,7 @@
 6139#Trainer, greyhound
 6139#Trainer, horse
 6139#Trainer, pony
+6139#Trimmer, barefoot, equine
 6139#Walker, dog
 6139#Warden, dog
 6139#Whip, hunting
@@ -14486,6 +14720,7 @@
 6141#Auxiliary, nursing
 6141#Carer, donor, blood
 6141#Carer, donor, National Blood Service
+6141#Doula
 6141#Help, ward
 6141#Helper, physiotherapy
 6141#Helper, radiographer's
@@ -14577,7 +14812,7 @@
 6144#Leader, home, nursing home
 6144#Leader, home, residential home
 6144#Leader, residential home
-6144#Leader, team, local government: social services:RESIDENTIAL CARE
+6144#Leader, team, local government social services, RESIDENTIAL CARE
 6144#Leader, team, residential care home
 6144#Leader, team, support, home
 6144#Manager, scheme, sheltered housing
@@ -14693,7 +14928,7 @@
 6146#Coordinator, care, residential home
 6146#Coordinator, care, social, welfare services
 6146#Leader, team, care, home, local government: social services
-6146#Leader, team, local government: social services:HOME CARE
+6146#Leader, team, local government social services, HOME CARE
 6146#Leader, team, nursing home
 6146#Worker, care, senior
 6146#Worker, social, resident, senior
@@ -14964,6 +15199,8 @@
 6221#Barber
 6221#Colourist, hairdressing
 6221#Controller, salon, hairdressing
+6221#Designer, hair
+6221#Director, art, hairdressing
 6221#Director, artistic, hairdressing
 6221#Director, style, hairdressing
 6221#Dresser, hair
@@ -15111,6 +15348,7 @@
 6240#Supervisor, room, linen, hospital service
 6240#Supervisor, services, hotel
 7111#Adviser, customer, retail trade
+7111#Adviser, fashion, retail trade
 7111#Adviser, sales
 7111#Adviser, service, customer, retail, wholesale trade
 7111#Agent, cleaner's, dry
@@ -15244,9 +15482,8 @@
 7112#Assistant, check-out
 7112#Assistant, forecourt
 7112#Assistant, garage, petrol station
-7112#Assistant, general, retail trade:CHECK-OUT
+7112#Assistant, general, retail trade, CHECK-OUT
 7112#Assistant, petrol
-7112#Assistant, sales , PETROL
 7112#Assistant, sales, forecourt
 7112#Assistant, sales, petrol
 7112#Assistant, sales, supermarket
@@ -15264,7 +15501,7 @@
 7112#Attendant, station, filling
 7112#Attendant, station, petrol
 7112#Attendant, station, service
-7112#Cashier, CAFE
+7112#Cashier, CAFe
 7112#Cashier, CANTEEN
 7112#Cashier, check-out
 7112#Cashier, forecourt
@@ -15281,7 +15518,7 @@
 7112#Clerk, scanner, retail trade
 7112#Clerk, scanning, retail trade
 7112#Controller, EPOS
-7112#Member, team, customer, retail:CHECKOUT
+7112#Member, team, customer, retail, CHECKOUT
 7112#Operative, check-out
 7112#Operator, cash and wrap
 7112#Operator, check-out
@@ -15296,6 +15533,7 @@
 7112#Salesman, forecourt, garage
 7112#Salesman, petrol, garage
 7113#Adviser, sales, inbound
+7113#Adviser, sales, media
 7113#Adviser, sales, TELEPHONE SALES
 7113#Adviser, telemarketing
 7113#Adviser, telesales
@@ -15578,7 +15816,7 @@
 7124#Vendor, newspaper
 7124#Vendor, street
 7125#Artist, display
-7125#Assistant, display, retail trade:MERCHANDISING
+7125#Assistant, display, retail trade, MERCHANDISING
 7125#Assistant, merchandising
 7125#Assistant, merchandising, visual
 7125#Associate, merchandise
@@ -15821,7 +16059,7 @@
 7214#Controller, cab
 7214#Controller, communications
 7214#Controller, divisional, police service
-7214#Controller, emergency services:RADIO
+7214#Controller, emergency services, RADIO
 7214#Controller, office, taxi
 7214#Controller, radio
 7214#Controller, service, transport, patient
@@ -15882,7 +16120,7 @@
 7215#Interviewer, telephone
 7215#Investigator, research, market
 7215#Representative, telesurveys
-7215#Researcher, market research
+7215#Researcher, MARKET RESEARCH
 7215#Researcher, market, INTERVIEWING
 7215#Researcher, telephone
 7215#Shopper, mystery
@@ -15939,6 +16177,7 @@
 7219#Representative, services, customer
 7219#Reservationist, hotel
 7219#Specialist, service, customer
+7220#Adviser, media, social
 7220#Head of customer quality
 7220#Head of customer services
 7220#Leader, team, call centre
@@ -17664,7 +17903,7 @@
 8113#Oiler, silk
 8113#Oiler, wool
 8113#Opener, asbestos
-8113#Opener, bale, textile mfr:OPENING DEPT
+8113#Opener, bale, textile mfr, OPENING DEPT
 8113#Opener, fibre
 8113#Opener, piece, textile mfr
 8113#Opener, textile mfr
@@ -17909,7 +18148,7 @@
 8113#Spinner, TEXTILES
 8113#Spinner, thread, METAL
 8113#Spinner, twine
-8113#Splicer, ROPE
+8113#Splicer, rope
 8113#Splicer, TEXTILE CORDS
 8113#Splicer, textile mfr
 8113#Splicer, yarn
@@ -19146,7 +19385,7 @@
 8115#Machinist, bias, rubber tyre mfr
 8115#Machinist, covering, rubber
 8115#Machinist, curing, RUBBER
-8115#Machinist, cutting, RUBBER
+8115#Machinist, cutting, rubber
 8115#Machinist, cutting, tyre mfr
 8115#Machinist, extruding, rubber goods mfr
 8115#Machinist, forcing
@@ -19264,7 +19503,7 @@
 8115#Trimmer, tyre, solid
 8115#Turner, ebonite
 8115#Turner, roller, RUBBER
-8115#Turner, RUBBER
+8115#Turner, rubber
 8115#Turner, rubber goods mfr
 8115#Turner, vulcanite
 8115#Veneerer, tyre
@@ -19330,7 +19569,7 @@
 8116#Hand, flasher, plastics mfr
 8116#Injector, mould, plastics goods mfr
 8116#Laminator, composite
-8116#Laminator, FIBREGLASS
+8116#Laminator, fibreglass
 8116#Laminator, grp
 8116#Laminator, plastic
 8116#Laminator, plastics mfr
@@ -21036,7 +21275,7 @@
 8122#Drifter, coal mine
 8122#Driftman, coal mine
 8122#Driller, coal mine
-8122#Driver, coal mine: below ground:PONY
+8122#Driver, coal mine below ground, PONY
 8122#Driver, shearer, coal mine
 8122#Dumper, coal mine
 8122#Emptier, wagon, coal mine
@@ -21257,10 +21496,10 @@
 8123#Cleaner, tin, mine: not coal
 8123#Contractor, mine: not coal
 8123#Crusher, ABRASIVES
-8123#Crusher, mine: not coal:ROCK
-8123#Crusher, mines and quarries:MINERALS
+8123#Crusher, mine not coal, ROCK
+8123#Crusher, mines and quarries, MINERALS
 8123#Crusher, slag
-8123#Crusherman, mine: not coal:ROCK
+8123#Crusherman, mine not coal, ROCK
 8123#Cutter, bottom
 8123#Cutter, clay
 8123#Cutter, machine, mine: not coal
@@ -22286,7 +22525,7 @@
 8129#Driver, shears, metal trades
 8129#Engineer, aerial, INSTALLATION
 8129#Engineer, battery
-8129#Engineer, lubrication 
+8129#Engineer, lubrication
 8129#Engineer, semi-skilled
 8129#Erector, aerial, television
 8129#Erector, conveyor, coal mine
@@ -22867,8 +23106,8 @@
 8131#Inserter, lamp, valve mfr
 8131#Joiner, bulb, valve mfr
 8131#Joiner, lamp, valve mfr
-8131#Leader, team, electrical, electronic equipment mfr:ASSEMBLY
-8131#Leader, team, production, electrical, electronic equipment mfr:ASSEMBLY
+8131#Leader, team, electrical, electronic equipment mfr, ASSEMBLY
+8131#Leader, team, production, electrical, electronic equipment mfr, ASSEMBLY
 8131#Machinist, capping, lamp
 8131#Maker, board, circuit, printed
 8131#Maker, bulb, electric lamp mfr
@@ -22974,7 +23213,7 @@
 8132#Assembler, tub
 8132#Assembler, valve, ENGINEER'S VALVES
 8132#Assembler, vehicle, motor
-8132#Assembler, window and door mfr:METAL FRAMES
+8132#Assembler, window and door mfr, METAL FRAMES
 8132#Associate, general, vehicle mfr
 8132#Associate, production, vehicle mfr
 8132#Associate, vehicle mfr
@@ -23004,7 +23243,7 @@
 8132#Hanger, door, COACH BODY
 8132#Lacer and driller, wheel, cycle mfr
 8132#Lacer, wheel
-8132#Leader, team, motor vehicle mfr:ASSEMBLY
+8132#Leader, team, motor vehicle mfr, ASSEMBLY
 8132#Leader, team, production, motor vehicle mfr
 8132#Lineworker, vehicle mfr
 8132#Machinist, production, vehicle mfr
@@ -23294,7 +23533,7 @@
 8133#Inspector, lining, brake linings mfr
 8133#Inspector, locomotive, railways
 8133#Inspector, machine
-8133#Inspector, machine, coal mine:WEIGHING MACHINES
+8133#Inspector, machine, coal mine, WEIGHING MACHINES
 8133#Inspector, machine, WEIGHING MACHINES
 8133#Inspector, machinery
 8133#Inspector, man-made fibre mfr
@@ -24777,20 +25016,22 @@
 8211#Drayman
 8211#Driver, ARTICULATED LORRY
 8211#Driver, delivery, HGV
-8211#Driver, drop, multi, hgv
+8211#Driver, drop, multi, HGV
 8211#Driver, dustcart
 8211#Driver, goods
 8211#Driver, haulage, motor
 8211#Driver, haulage, road transport
 8211#Driver, HGV
+8211#Driver, HGV/LGV
 8211#Driver, LGV
+8211#Driver, LGV/HGV
 8211#Driver, library, mobile
 8211#Driver, loader
 8211#Driver, loader, low
 8211#Driver, local government: cleansing dept
 8211#Driver, lorry
 8211#Driver, low-loader
-8211#Driver, multi-drop, hgv
+8211#Driver, multi-drop, HGV
 8211#Driver, pump, concrete
 8211#Driver, refuse
 8211#Driver, removal
@@ -25237,7 +25478,7 @@
 8232#Keeper, boat
 8232#Keeper, store, room, engine
 8232#Lifeboatman
-8232#Lighter, lamp, Trinity House,SHIPS
+8232#Lighter, lamp, Trinity House, SHIPS
 8232#Lighterman
 8232#Lightsman, LIGHTSHIP
 8232#Look-out and AB
@@ -25350,8 +25591,8 @@
 8234#Controller, relief, trainsman's
 8234#Controller, section, railways
 8234#Controller, train
+8234#Driver, coal mine below ground, TRAIN
 8234#Driver, coal mine: above ground
-8234#Driver, coal mine: below ground:TRAIN
 8234#Driver, diesel, coal mine
 8234#Driver, engine, diesel, coal mine
 8234#Driver, surface, coal mine
@@ -26321,7 +26562,7 @@
 9134#Worker, bench, newspaper printing
 9134#Worker, cannery
 9134#Worker, factory, PACKING
-9134#Worker, process, food products mfr:PACKING
+9134#Worker, process, food products mfr, PACKING
 9134#Worker, process, PACKING
 9134#Wrapper
 9134#Wrapper-up
@@ -27004,7 +27245,7 @@
 9211#Distributor, newspaper
 9211#Driver, collection, PO
 9211#Driver-postman
-9211#Executive, postal, PO:GRADE D
+9211#Executive, postal, PO, GRADE D
 9211#Forewoman, PO
 9211#Girl, paper, newsagents
 9211#Girl, shop, tailor's
@@ -27423,6 +27664,7 @@
 9239#Sweeper, chimney
 9241#Adviser, security
 9241#Agent, security
+9241#Agent, security, aviation
 9241#Agent, trace
 9241#Assistant, museum, SECURITY
 9241#Assistant, PO: investigation branch
@@ -27542,11 +27784,11 @@
 9244#Assistant, supervisory, lunchtime
 9244#Assistant, supervisory, midday
 9244#Assistant, supervisory, SCHOOL MEALS
-9244#Assistant, supervisory, schools:MIDDAY
+9244#Assistant, supervisory, schools, MIDDAY
 9244#Assistant, time, lunch, schools
 9244#Assistant, time, meal, schools
 9244#Assistant, welfare, dinner
-9244#Assistant, welfare, schools:LUNCHTIME
+9244#Assistant, welfare, schools, LUNCHTIME
 9244#Attendant, crossing, ROAD
 9244#Attendant, crossing, schools
 9244#Attendant, ground, play
@@ -28035,7 +28277,7 @@
 9260#Porter, coal
 9260#Porter, despatch
 9260#Porter, dock
-9260#Porter, docks:FOOD
+9260#Porter, docks, FOOD
 9260#Porter, FOOD
 9260#Porter, furniture
 9260#Porter, general
@@ -28051,7 +28293,7 @@
 9260#Porter, store
 9260#Porter, stores
 9260#Porter, timber
-9260#Porter, timber yard:TIMBER
+9260#Porter, timber yard, TIMBER
 9260#Porter, timber, furniture mfr
 9260#Porter, timber, timber yard
 9260#Porter, transport
@@ -28253,7 +28495,7 @@
 9272#Host, ward, hospital service
 9272#Hostess, hospital service
 9272#Inspector, car, DINING CAR
-9272#Lady, dinner, schools:PREPARING, SERVING FOOD
+9272#Lady, dinner, schools, PREPARING, SERVING FOOD
 9272#Lady, tea
 9272#Maid, buffet
 9272#Maid, canteen, SCHOOLS
@@ -28401,6 +28643,7 @@
 9274#Keeper, bar, hotels, catering, public houses
 9274#Keeper, bar, shipping
 9274#Maid, bar
+9274#Mixologist, BEVERAGES
 9274#Operative, bar
 9274#Staff, bar
 9274#Steward, bar
@@ -28570,5 +28813,3 @@
 9279#Washhouseman, baths
 9279#Worker, hostel
 9279#Worker, hotel
-3413#YouTuber
-
