@@ -3660,7 +3660,7 @@
 2419#Notary
 2419#Owner, legal services
 2419#Reporter to the Children's Panel
-2419#Reporter, children’s, SCOTLAND
+2419#Reporter, childrenÂ’s, SCOTLAND
 2421#ACA
 2421#Accountant, bank
 2421#Accountant, borough
@@ -4373,8 +4373,8 @@
 2473#Manager, projects, advertising
 2473#Manager, raising, fund
 2473#Manager, traffic, advertising
-2741#Editor, online
-2741#Editor, publishing
+2471#Editor, online
+2471#Editor, publishing
 3111#Aid, laboratory
 3111#Aide, laboratory
 3111#Analyser
@@ -8209,7 +8209,7 @@
 4129#Assistant, cost
 4129#Assistant, costing
 4129#Assistant, counter, bookmakers, turf accountants
-4129#Assistant, dealer’s, financial services
+4129#Assistant, dealerÂ’s, financial services
 4129#Assistant, estimating
 4129#Assistant, estimator's
 4129#Assistant, exchequer
@@ -14397,21 +14397,21 @@
 5449#Writer, signwriting
 5449#Writer, ticket
 6121#Assistant, care, child, children's nursery
-6121#Assistant, crèche
-6121#Assistant, general, children’s nursery
+6121#Assistant, crÃ¨che
+6121#Assistant, general, childrenÂ’s nursery
 6121#Assistant, kindergarten
 6121#Assistant, nursery
 6121#Assistant, pre-school
 6121#Assistant, years, early
-6121#Attendant, crèche
+6121#Attendant, crÃ¨che
 6121#Attendant, nursery
 6121#Educator, years, early
 6121#Governess, nursery
-6121#Helper, crèche
+6121#Helper, crÃ¨che
 6121#Helper, nursery
 6121#Helper, pre-school
-6121#Leader, crèche
-6121#Manager, crèche
+6121#Leader, crÃ¨che
+6121#Manager, crÃ¨che
 6121#Manager, group, play
 6121#Manager, playgroup
 6121#NNEB
@@ -14426,14 +14426,14 @@
 6121#Practitioner, school, nursery
 6121#Practitioner, years, early
 6121#Supervisor, children's nursery
-6121#Supervisor, crèche
+6121#Supervisor, crÃ¨che
 6121#Supervisor, nursery
 6121#Supervisor, pre-school
 6121#Teacher, kindergarten
 6121#Teacher, nursery
 6121#Teacher, pre-school
 6121#Warden, day nursery
-6121#Worker, crèche
+6121#Worker, crÃ¨che
 6121#Worker, nursery, day nursery
 6121#Worker, support, nursery
 6121#Worker, support, years, early
@@ -15594,12 +15594,12 @@
 7114#Assistant, lens, contact
 7114#Assistant, optical
 7114#Assistant, optician's
-7114#Assistant, optometrist’s
+7114#Assistant, optometristÂ’s
 7114#Assistant, pharmaceutical, retail chemists
 7114#Assistant, pharmacist's
 7114#Assistant, pharmacy
 7114#Assistant, sales, retail pharmacy
-7114#Assistant, shop, chemist’s
+7114#Assistant, shop, chemistÂ’s
 7114#Consultant, optical
 7114#Dispenser
 7114#Dispenser, chemist
@@ -28409,7 +28409,7 @@
 9272#Assistant, canteen
 9272#Assistant, caterer's
 9272#Assistant, catering
-9272#Assistant, chef’s
+9272#Assistant, chefÂ’s
 9272#Assistant, cookery
 9272#Assistant, cook's
 9272#Assistant, counter, catering
